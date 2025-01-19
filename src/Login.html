@@ -12,7 +12,7 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <a href="/index.html">
+            <a href="index.html">
                 <img src="/IMAGENS/logo.png" alt="Elibeach Logo">
             </a>
         </div>
@@ -25,15 +25,51 @@
             </ul>
         </nav>
         <div class="user-icons">
+            <!-- Botão de pesquisa -->
             <div class="search-container">
                 <img src="/IMAGENS/search-icon.png" alt="Search" id="search-icon">
                 <input type="text" class="search-bar" placeholder="Search in site">
             </div>
 
-            <img src="/IMAGENS/user-icon.png" alt="User" onclick="toggleUserMenu()">
+            <!-- Ícone do Usuário (aparece após o login) -->
+            <div class="user-icon" id="user-icon" style="display: none;" onclick="toggleUserMenu()">
+                <img src="/IMAGENS/user-icon.png" alt="User Icon" />
+            </div>
+            <!-- Botão de Login (aparece até o login ser realizado) -->
+            <div class="user-login" id="user-login">
+                <button class="login-button" id="login-button" onclick="toggleLoginForm()">Login</button>
+            </div>
+
+            <!-- Formulário de Login -->
+            <div class="login-form-container" id="login-form" style="display: none;">
+                <form autocomplete="off">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required
+                        autocomplete="email" />
+
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required
+                        autocomplete="current-password" />
+
+                    <button type="button" onclick="loginUser()">Entrar</button>
+                </form>
+            </div>
+
+
+            <!-- Menu de usuário (inicialmente escondido) -->
+            <div class="user-menu" id="user-menu" style="display: none;">
+                <ul>
+                    <li><a href="/Login.html">Gerenciar Conta</a></li>
+                    <li><a href="/Login.html">Reviews</a></li>
+                    <li><a href="/Login.html">Notificações</a></li>
+                    <li><a href="#" onclick="logoutUser()">Sair</a></li>
+                </ul>
+            </div>
         </div>
-       
-        <script src="/JS/searchbar.js"></script>
+
+        <script src="/JS/search.js"></script>
+        <script src="/JS/menu.js"></script>
+        <script src="/JS/login.js"></script>
     </header>
     <!-- Main Content -->
     <main>
@@ -60,7 +96,7 @@
             </div>
         </section>
         <!-- comentarios -->
-         <hr>
+        <hr>
         <section class="comentarios">
             <div class="coments">
                 <h2>Comments</h2>
@@ -71,7 +107,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="icones">
                 <div class="icone">
                     <div class="icone-img-bg">
@@ -96,8 +132,8 @@
                 </div>
             </div>
         </section>
-        
-      <hr>
+
+        <hr>
         <section class="fazer-review">
             <div class="Reviewai">
                 <button class="Review">Review</button>
@@ -107,7 +143,7 @@
                 <button class="btn-enviar">Enviar</button>
             </div>
         </section>
-        
+
     </main>
 
     <!-- Footer -->

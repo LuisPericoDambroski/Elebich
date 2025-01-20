@@ -11,13 +11,14 @@ function loginUser() {
 
     if (email && password) {
         localStorage.setItem("usuarioLogado", "true"); // Salva o login no navegador
+        // Armazenar a URL da página atual para que o usuário continue na mesma página
+        localStorage.setItem("paginaAnterior", window.location.href);
 
         document.getElementById("login-form").style.display = "none";
         document.getElementById("login-button").style.display = "none";
         document.getElementById("user-icon").style.display = "block";
         
-        // Redireciona para a página de gerenciamento após login
-        window.location.href = "Login.html";
+        // NÃO redirecionar para outra página. O usuário permanece na mesma página.
     } else {
         document.getElementById("login-form").innerHTML += "<p style='color: red;'>Por favor, preencha todos os campos.</p>";
     }
@@ -54,10 +55,10 @@ function toggleUserMenu() {
 function logoutUser() {
     localStorage.removeItem("usuarioLogado"); // Remove o login salvo
 
-    // Redireciona para a página de onde o usuário veio
-    const previousPage = document.referrer;
-    if (previousPage) {
-        window.location.href = previousPage; // Volta para a página anterior
+    // Verifica se há uma página anterior armazenada e redireciona para ela
+    const paginaAnterior = localStorage.getItem("paginaAnterior");
+    if (paginaAnterior) {
+        window.location.href = paginaAnterior; // Volta para a página onde o usuário estava antes
     } else {
         window.location.href = "index.html"; // Caso não tenha página anterior, vai para a página inicial
     }

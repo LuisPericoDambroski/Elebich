@@ -15,158 +15,232 @@ body {
     --text-color: #000000;
   }
   
-  /* Header */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #FFFFFF;
-    box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
-    position: relative;
-    flex-wrap: wrap;
-  }
-  
-  /* Logo */
-  header .logo img {
-    max-height: 3.125rem; /* 50px */
-    width: auto; /* Mantém proporções */
-  }
-  
-  /* Navigation */
-  header nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-    padding: 0;
-    margin: 0;
-  }
-  
-  header nav ul li a {
-    text-decoration: none;
-    padding: 0.625rem 1.25rem;
-    color: #FFFFFF;
-    background-color: #2196F3;
-    border-radius: 1.25rem;
-    transition: background-color 0.3s;
-    font-size: 1rem;
-  }
-  
-  header nav ul li a:hover {
-    background-color: #1769aa;
-  }
-  
-  /* User Icons */
-  .user-icons {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    position: relative;
-  }
-  
-  .user-icons img {
-    max-height: 2rem; /* Ajusta para um tamanho fixo */
-    width: auto; /* Mantém proporções */
-    cursor: pointer;
-  }
-  
-  /* Search Container */
-  .search-container {
-    position: relative; /* Mantém a referência para elementos posicionados */
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-container img {
-    max-height: 1.875rem; /* 30px */
-    cursor: pointer;
-  }
-  
-  .search-container .search-bar {
-    display: none; /* Inicialmente oculto */
-    position: absolute; /* Posicionado acima dos outros elementos */
-    right: 0; /* Alinha à direita do container */
-    transform: translateX(-100%); /* Expande para a esquerda */
-    width: 0; /* Largura inicial zero */
-    max-width: 15rem; /* Largura máxima ajustada (240px) */
-    padding: 0.5rem 1rem;
-    border: 2px solid #2196F3;
-    border-radius: 1.25rem;
-    outline: none;
-    font-size: 1rem;
-    color: #000000;
-    background-color: #FFFFFF;
-    z-index: 10; /* Garante que fique acima dos outros elementos */
-    transition: all 0.3s ease; /* Animação suave ao expandir */
-  }
-  
-  .search-container.active .search-bar {
-    display: block;
-    width: 10rem; /* Largura expandida ao clicar */
-  }
-  
-  /* Ajuste para o ícone */
-  .search-container img {
-    z-index: 11; /* garantir que o ícone esteja acima da barra */
-  }
-  
-  
-  /* User Menu */
-  .user-menu {
-    position: absolute;
-    top: 4rem;
-    right: 2rem;
-    background-color: #FFFFFF;
-    border-radius: 0.625rem;
-    box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 10;
-    padding: 0.5rem;
-  }
-  
-  .user-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .user-menu ul li {
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .user-menu ul li:last-child {
-    margin-bottom: 0;
-  }
-  
-  .user-menu ul li a {
-    display: block;
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 1rem;
-    background-color: #2196F3;
-    border-radius: 0.625rem;
-    padding: 0.625rem 1.25rem;
-    transition: background-color 0.3s;
-  }
-  
-  .user-menu ul li a:hover {
-    background-color: #1769aa;
-  }
-  
-  
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+header .logo img {
+  max-height: 3.125rem;
+  /* 50px */
+  width: auto;
+  /* Mantém proporções */
+}
+
+/* Navigation */
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  padding: 0.625rem 1.25rem;
+  color: #FFFFFF;
+  background-color: #2196F3;
+  border-radius: 1.25rem;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+header nav ul li a:hover {
+  background-color: #1769aa;
+}
+
+/* User Icons */
+.user-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.user-icons img {
+  height: auto; /* Remove a altura fixa */
+  max-width: 2rem; /* Define uma largura máxima para o ícone */
+  width: auto; /* Mantém a proporção da imagem */
+  cursor: pointer;
+}
+
+
+/* Botão de Login */
+.login-button {
+  background-color: #2196F3; /* Azul padrão */
+  color: #FFFFFF; /* Texto branco */
+  border: none; /* Remove bordas */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  padding: 0.625rem 1.25rem; /* Espaçamento interno */
+  font-size: 1rem; /* Tamanho do texto */
+  cursor: pointer; /* Cursor de clique */
+  transition: background-color 0.3s; /* Animação suave */
+}
+
+/* Hover do Botão de Login */
+.login-button:hover {
+  background-color: #1769aa; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Formulário de Login */
+.login-form-container {
+  position: absolute;
+  top: 4rem; /* Posição relativa ao topo */
+  right: 2rem; /* Posição relativa à direita */
+  width: 20rem; /* Largura fixa */
+  background-color: #FFFFFF; /* Fundo branco */
+  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Sombra leve */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  padding: 1.5rem; /* Espaçamento interno */
+  display: none; /* Inicialmente oculto */
+  z-index: 10; /* Garante visibilidade acima de outros elementos */
+}
+
+/* Inputs do Formulário */
+.login-form-container input[type="email"],
+.login-form-container input[type="password"] {
+  width: 100%; /* Largura total */
+  padding: 0.625rem; /* Espaçamento interno */
+  margin-bottom: 1rem; /* Espaçamento inferior */
+  border: 1px solid #ccc; /* Borda cinza */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho do texto */
+  box-sizing: border-box; /* Inclui padding no cálculo de largura */
+  outline: none; /* Remove o destaque ao focar */
+  transition: border-color 0.3s; /* Animação suave */
+}
+
+/* Efeito ao Focar nos Inputs */
+.login-form-container input:focus {
+  border-color: #2196F3; /* Borda azul ao focar */
+}
+
+/* Rótulos */
+.login-form-container label {
+  font-size: 1rem; /* Tamanho do texto */
+  color: #333; /* Cor do texto */
+  display: block; /* Exibe como bloco */
+  margin-bottom: 0.5rem; /* Espaçamento inferior */
+}
+
+/* Botão de Enviar no Formulário */
+.login-form-container button {
+  background-color: #2196F3; /* Azul padrão */
+  color: #FFFFFF; /* Texto branco */
+  border: none; /* Remove bordas */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  padding: 0.625rem 1.25rem; /* Espaçamento interno */
+  font-size: 1rem; /* Tamanho do texto */
+  cursor: pointer; /* Cursor de clique */
+  width: 100%; /* Largura total */
+  transition: background-color 0.3s; /* Animação suave */
+}
+
+.login-form-container button:hover {
+  background-color: #1769aa; /* Azul mais escuro ao passar o mouse */
+}
+
+
+
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container img {
+  max-height: 1.875rem; /* 30px */
+  cursor: pointer;
+}
+
+.search-bar {
+  display: none;
+  position: absolute;
+  right: 0;
+  transform: translateX(-100%);
+  width: 0;
+  max-width: 15rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #2196F3;
+  border-radius: 1.25rem;
+  outline: none;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #FFFFFF;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.search-bar.active {
+  display: block;
+  width: 10rem; /* Largura expandida */
+  background-color: #FFFFFF;
+  color: #0f0f0f;
+}
+
+
+/* User Menu */
+.user-menu {
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  background-color: #FFFFFF;
+  border-radius: 0.625rem;
+  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+  padding: 0.5rem;
+}
+
+.user-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-menu ul li {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.user-menu ul li:last-child {
+  margin-bottom: 0;
+}
+
+.user-menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+  background-color: #2196F3;
+  border-radius: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s;
+}
+
+.user-menu ul li a:hover {
+  background-color: #1769aa;
+}
+
+/* Ajuste adicional para manter proporções */
+.search-container img {
+  z-index: 11;
+}
+
+
   
   /* Banner */
-  .banner {
-    text-align: center;
-    width: 100%;
-    height: 50vh;  /* Ajuste a altura para 50% da altura da viewport */
-    overflow: hidden;
-  }
-  
-  .banner-image {
-    width: 100%;
-  }
   
   .slideshow-container {
     width: 100%;
@@ -178,6 +252,18 @@ body {
   .mySlides img {
     width: 100%;
     height: 50vh;
+    object-fit: cover;
+  }
+  .anuncio {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .anuncio img {
+    width: 100%;
+    height: 30vh;
     object-fit: cover;
   }
   
@@ -306,10 +392,10 @@ body {
   /* Highlights */
   .highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); /* 300px */
+    grid-template-columns: repeat(auto-fit, minmax(25.75rem, 1fr)); /* 300px */
     gap: 2rem;
     margin: 2.5rem auto;
-    max-width: 75%;
+    max-width: 85%;
   }
   
   .highlight {
@@ -317,7 +403,7 @@ body {
     border-radius: 0.625rem;
     overflow: hidden;
     box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
-    height: 21.875rem;
+    height: 28.875rem;
   }
   
   .highlight img {
@@ -469,56 +555,87 @@ body {
     background-color: #1769aa;
   }
   
-  /* Modal */
   .modal {
-    display: none; /* Inicialmente escondido */
+    display: none; /* Inicialmente oculto */
     position: fixed;
-    top: 0;
+    z-index: 1;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    display: flex; /* Garante que o conteúdo do modal seja centralizado */
   }
   
-  .modal-content {
-    background-color: #fff;
-    display: flex;
-    padding: 6rem;
-    border-radius: 8px;
-    max-width: 1000px;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .modal .modal-image {
-    flex: 1;
-    max-width: 550px;
-    margin-right: 30px;
-    max-height: 600px;
-  }
-  
-  .modal .modal-text {
-    flex: 2;
-    font-size: 1rem;
-    text-align: start;
-  }
-  
-  .modal .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    color: #000;
-    cursor: pointer;
-  }
-  
-  .modal .close:hover {
-    color: #f44336;
-  }
+  /* Modal */
+.modal {
+  display: none; /* Modal começa escondido */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  justify-content: center;
+  align-items: center;
+  display: flex; /* Centraliza o conteúdo do modal */
+  flex-direction: column; /* Se necessário, para organização vertical */
+}
+
+/* Conteúdo do Modal (layout com grid) */
+.modal-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 130vh; /* Tamanho máximo da largura */
+  text-align: left;
+  max-height: 80vh; /* Limite de altura para não sair da tela */
+  overflow: auto; /* Permite rolar caso o conteúdo ultrapasse o limite de altura */
+}
+
+/* Estilo da imagem dentro do modal */
+.modal-image {
+  width: 60vh;
+  height: 60vh;
+  object-fit: cover; /* Mantém a proporção da imagem */
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* Estilo do botão "Ir para a página" */
+.go-to-page {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.go-to-page:hover {
+  background-color: #45a049;
+}
+
+/* Estilo do botão de fechar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
   
   
   /* Footer */

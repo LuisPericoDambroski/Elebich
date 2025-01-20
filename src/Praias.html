@@ -1,103 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/praias.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praias</title>
+  <link rel="stylesheet" href="/CSS/praias.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <a href="/index.html">
-                <img src="/IMAGENS/logo.png" alt="Elibeach Logo">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#Sobre">Sobre</a></li>
-                <li><a href="#">Praias</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#Contato">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="user-icons">
-            <div class="search-container">
-                <img src="/IMAGENS/search-icon.png" alt="Search" id="search-icon">
-                <input type="text" class="search-bar" placeholder="Search in site">
-            </div>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="/IMAGENS/logo.png" alt="Elibeach Logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/Sobre.html">Sobre</a></li>
+        <li><a href="/Praias.html">Praias</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#Contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="user-icons">
+      <!-- Botão de pesquisa -->
+      <div class="search-container">
+        <img src="/IMAGENS/search-icon.png" alt="Search" id="search-icon">
+        <input type="text" class="search-bar" placeholder="Search in site">
+      </div>
 
-            <img src="/IMAGENS/user-icon.png" alt="User" onclick="toggleUserMenu()">
-        </div>
-        <div class="user-menu">
-            <ul>
-                <li><a href="/Login.html">Gerenciar conta</a></li>
-                <li><a href="/Login.html">Reviews</a></li>
-                <li><a href="/Login.html">Notificações</a></li>
-                <li><a href="/index.html">Sair</a></li>
-            </ul>
-        </div>
-        <script src="/JS/searchbar.js"></script>
-    </header>
-    <main>
+      <!-- Ícone do Usuário (aparece após o login) -->
+      <div class="user-icon" id="user-icon" style="display: none;" onclick="toggleUserMenu()">
+        <img src="/IMAGENS/user-icon.png" alt="User Icon" />
+      </div>
+      <!-- Botão de Login (aparece até o login ser realizado) -->
+      <div class="user-login" id="user-login">
+        <button class="login-button" id="login-button" onclick="toggleLoginForm()">Login</button>
+      </div>
 
-    <!-- Banner -->
-    <div class="banner">
-        <img src="/IMAGENS/Rectangle 6726.png" alt="">
+      <!-- Formulário de Login -->
+      <div class="login-form-container" id="login-form" style="display: none;">
+        <form autocomplete="off">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu email" required autocomplete="email" />
+
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha" required
+            autocomplete="current-password" />
+
+          <button type="button" onclick="loginUser()">Entrar</button>
+        </form>
+      </div>
+
+
+      <!-- Menu de usuário (inicialmente escondido) -->
+      <div class="user-menu" id="user-menu" style="display: none;">
+        <ul>
+          <li><a href="/Login.html">Gerenciar Conta</a></li>
+          <li><a href="/Login.html">Reviews</a></li>
+          <li><a href="/Login.html">Notificações</a></li>
+          <li><a href="#" onclick="logoutUser()">Sair</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="search-bar"></div>
-    <section>
-        <h1>Mais avaliadas</h1>
-        <div class="highlights">
-            <div class="highlight">
-                <img src="/IMAGENS/highlight1.jpg" alt="Destaque 1">
-                <button data-id="1" onclick="openModal(this)">Saiba mais</button>
-            </div>
-            <div class="highlight">
-                <img src="/IMAGENS/highlight2.jpg" alt="Destaque 2">
-                <button data-id="1" onclick="openModal(this)">Saiba mais</button>
-            </div>
-            <div class="highlight">
-                <img src="/IMAGENS/highlight3.jpg" alt="Destaque 3">
-                <button data-id="2" onclick="openModal(this)">Saiba mais</button>
-            </div>
-            <script src="/JS/modal.js"></script>
-        </div>
-    </section>
-    
-</main>
 
-<!-- Rodapé -->
-<footer>
+  </header>
+  <!-- Header fim -->
+  <!-- Banner -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="/IMAGENS/melhores-praias.png" alt="Praia 1" class="banner-image">
+
+    </div>
+    <div class="mySlides fade">
+      <img src="/IMAGENS/Anuncio2.png" alt="Praia 2" class="banner-image">
+
+    </div>
+    <div class="mySlides fade">
+      <img src="/IMAGENS/banner.png" alt="Praia 3" class="banner-image">
+
+    </div>
+    <div class="mySlides fade">
+      <img src="/IMAGENS/banner4.png" alt="Praia 4 " class="banner-image">
+
+    </div>
+    <div class="dots-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+
+      
+    </div>
+    <!-- Setas de Navegação -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <!-- Setas de Navegação Fim-->
+  </div>
+  <!-- Banner fim -->
+  <!-- Categorias -->
+  <div class="destaques">
+    <h1 class="destaque"> Destaques</h1>
+  </div>
+  <!-- Modal -->
+  <div class="container">
+
+    <div class="button-container" id="button-container"></div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modal-image" class="modal-image" alt="Imagem da Praia">
+      <div id="modal-text" class="modal-text"></div>
+      <button class="go-to-page" onclick="">Ir até a pagina</button>
+    </div>
+</div>
+  <section id="praias" class="categories">
+    <div class="category">
+      <div class="image-container">
+        <h3>Baía do Sancho</h3>
+        <img src="/IMAGENS/highlight1.png" alt="Praia 3">
+        <button class="saiba-mais" data-id="1">Saiba Mais</button>
+      </div>
+    </div>
+    <div class="category">
+      <div class="image-container">
+        <h3>Praia do Espelho</h3>
+        <img src="/IMAGENS/highlight2.jpeg" alt="Praia 4">
+        <button class="saiba-mais" data-id="2">Saiba Mais</button>
+      </div>
+    </div>
+    <div class="category">
+      <div class="image-container">
+        <h3>Praia dos Carneiros</h3>
+        <img src="/IMAGENS/highlight3.jpeg" alt="Praia 5">
+        <button class="saiba-mais" data-id="3">Saiba Mais</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorias fim -->
+  <!-- Destaques -->
+  <section class="beaches-container">
+    <!-- Conjunto 1 -->
+    <div class="beaches-set">
+      <div class="beach">
+        <img src="/IMAGENS/highlight1.png" alt="Baía do Sancho">
+        <h3>Baía do Sancho</h3>
+        <p>Localizada em Fernando de Noronha, Pernambuco, a Baía do Sancho é considerada uma das mais belas praias do
+          Brasil, com águas cristalinas e rica vida marinha.</p>
+        <button class="saiba-mais" data-id="1">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight2.jpeg" alt="Praia do Espelho">
+        <h3>Praia do Espelho</h3>
+        <p>Localizada em Trancoso, Bahia, a Praia do Espelho é famosa por sua beleza natural, com águas tranquilas e
+          falésias impressionantes.</p>
+        <button class="saiba-mais" data-id="2">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight3.jpeg" alt="Praia dos Carneiros">
+        <h3>Praia dos Carneiros</h3>
+        <p>Localizada em Tamandaré, Pernambuco, a Praia dos Carneiros é famosa por suas águas calmas, transparentes e
+          sua paisagem paradisíaca com coqueirais.</p>
+        <button class="saiba-mais" data-id="3">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight4.jpg" alt="Praia de Jericoacoara">
+        <h3>Praia de Jericoacoara</h3>
+        <p>Localizada no Ceará, Jericoacoara é famosa por suas dunas e lagoas de águas cristalinas, um destino ideal
+          para quem busca aventura e tranquilidade.</p>
+        <button class="saiba-mais" data-id="4">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight5.jpg" alt="Praia de Garapuá">
+        <h3>Praia de Garapuá</h3>
+        <p>Localizada em Cairu, Bahia, a Praia de Garapuá é uma das mais tranquilas da região, com águas calmas e
+          rodeada de vegetação nativa.</p>
+        <button class="saiba-mais" data-id="5">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight6.jpg" alt="Praia da Ilha do Campeche">
+        <h3>Praia da Ilha do Campeche</h3>
+        <p>Localizada em Florianópolis, Santa Catarina, a Ilha do Campeche é conhecida por suas águas cristalinas e
+          trilhas que levam a sítios arqueológicos.</p>
+        <button class="saiba-mais" data-id="6">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight7.jpeg" alt="Praia da Lagoinha do Leste">
+        <h3>Praia da Lagoinha do Leste</h3>
+        <p>Localizada em Florianópolis, Santa Catarina, a Praia da Lagoinha do Leste é isolada e de difícil acesso,
+          oferecendo uma paisagem intocada e tranquila.</p>
+        <button class="saiba-mais" data-id="7">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight8.webp" alt="Praia da Ponta do Corumbau">
+        <h3>Praia da Ponta do Corumbau</h3>
+        <p>Localizada em Corumbau, Bahia, a Praia da Ponta do Corumbau é um destino mais tranquilo, com águas claras e
+          recifes de corais.</p>
+        <button class="saiba-mais" data-id="8">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight9.png" alt="Praia de Copacabana">
+        <h3>Praia de Copacabana</h3>
+        <p>Localizada no Rio de Janeiro, a Praia de Copacabana é uma das praias mais famosas do Brasil, com sua extensa
+          faixa de areia e o famoso calçadão.</p>
+        <button class="saiba-mais" data-id="9">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight10.webp" alt="Praia de Jurerê">
+        <h3>Praia de Jurerê</h3>
+        <p>Localizada em Florianópolis, Jurerê é famosa por sua infraestrutura de alto padrão, águas calmas e excelente
+          para esportes náuticos.</p>
+        <button class="saiba-mais" data-id="10">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight11.webp" alt="Praia de Ponta Verde">
+        <h3>Praia de Ponta Verde</h3>
+        <p>Localizada em Maceió, Alagoas, a Praia de Ponta Verde é uma das mais visitadas, com águas claras, coqueiros e
+          uma excelente infraestrutura de lazer.</p>
+        <button class="saiba-mais" data-id="11">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight12.webp" alt="Praia do Farol">
+        <h3>Praia do Farol</h3>
+        <p>Localizada em Arraial do Cabo, Rio de Janeiro, a Praia do Farol é famosa por suas águas transparentes, ideais
+          para mergulho e um cenário deslumbrante.</p>
+        <button class="saiba-mais" data-id="12">Saiba Mais</button>
+      </div>
+    </div>
+  </section>
+
+  </section>>
+
+  <!-- Destaques fim-->
+
+  <!-- banner do meio -->
+  <div class="bannermeio">
+
+  </div>
+  <!-- banner do meio Fim -->
+  <section class="beaches-container">
+    <!-- Conjunto 2 -->
+    <div class="beaches-set">
+      <div class="beach">
+        <img src="/IMAGENS/highlight1.png" alt="Praia do Madeiro">
+        <h3>Praia do Madeiro</h3>
+        <p>Localizada em Tibau do Sul, Rio Grande do Norte, a Praia do Madeiro é um destino conhecido pela sua beleza
+          natural, águas claras e tranquilidade.</p>
+        <button class="saiba-mais" data-id="13">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight2.jpeg" alt="Praia de Ipanema">
+        <h3>Praia de Ipanema</h3>
+        <p>Localizada no Rio de Janeiro, a Praia de Ipanema é famosa mundialmente, com seu calçadão vibrante e uma
+          atmosfera animada.</p>
+        <button class="saiba-mais" data-id="14">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight3.jpeg  " alt="Praia de Canoa Quebrada">
+        <h3>Praia de Canoa Quebrada</h3>
+        <p>Localizada no Ceará, a Praia de Canoa Quebrada é conhecida por suas falésias coloridas e pelo ambiente boêmio
+          que atrai turistas o ano inteiro.</p>
+        <button class="saiba-mais" data-id="15">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight4.jpg" alt="Praia do Rosa">
+        <h3>Praia do Rosa</h3>
+        <p>Localizada em Imbituba, Santa Catarina, a Praia do Rosa é famosa por suas ondas, ideais para o surfe, e pela
+          natureza preservada que a cerca.</p>
+        <button class="saiba-mais" data-id="16">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight5.jpg" alt="Praia do Forte">
+        <h3>Praia do Forte</h3>
+        <p>Localizada em Mata de São João, Bahia, a Praia do Forte é famosa por suas águas cristalinas, rica vida
+          marinha e o Projeto Tamar, que protege as tartarugas marinhas.</p>
+        <button class="saiba-mais" data-id="17">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight6.jpg" alt="Praia de Barra Grande">
+        <h3>Praia de Barra Grande</h3>
+        <p>Localizada em Maraú, Bahia, a Praia de Barra Grande é um paraíso tranquilo, com águas calmas, coqueiros e uma
+          atmosfera rústica e acolhedora.</p>
+        <button class="saiba-mais" data-id="18">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight7.jpeg" alt="Praia de Baía dos Golfinhos">
+        <h3>Praia de Baía dos Golfinhos</h3>
+        <p>Localizada em Pipa, Rio Grande do Norte, a Praia de Baía dos Golfinhos é conhecida pela sua natureza intocada
+          e pelas vistas incríveis, além de ser um ótimo local para observação de golfinhos.</p>
+        <button class="saiba-mais" data-id="19">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight8.webp" alt="Praia de Barra de São Miguel">
+        <h3>Praia de Barra de São Miguel</h3>
+        <p>Localizada em Alagoas, a Praia de Barra de São Miguel é famosa por sua paisagem paradisíaca, com águas calmas
+          e azuis, ideal para banhos e passeios de barco.</p>
+        <button class="saiba-mais" data-id="20">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight9.png" alt="Praia do Leme">
+        <h3>Praia do Leme</h3>
+        <p>Localizada no Rio de Janeiro, a Praia do Leme é uma extensão da Praia de Copacabana, mais tranquila e com um
+          visual deslumbrante, ideal para quem busca um ambiente mais sossegado.</p>
+        <button class="saiba-mais" data-id="21">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight10.webp" alt="Praia de Maragogi">
+        <h3>Praia de Maragogi</h3>
+        <p>Localizada em Alagoas, Maragogi é famosa pelas suas piscinas naturais e águas transparentes, um destino
+          perfeito para quem ama o mar e quer explorar a vida marinha.</p>
+        <button class="saiba-mais" data-id="22">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight11.webp" alt="Praia do Itacaré">
+        <h3>Praia do Itacaré</h3>
+        <p>Localizada no sul da Bahia, a Praia de Itacaré é um destino de surfe, com ondas fortes e uma paisagem
+          exuberante, rodeada por mata atlântica.</p>
+        <button class="saiba-mais" data-id="23">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight12.webp" alt="Praia de Morro de São Paulo">
+        <h3>Praia de Morro de São Paulo</h3>
+        <p>Localizada na Ilha de Tinharé, Bahia, a Praia de Morro de São Paulo é um destino famoso pelas suas praias
+          paradisíacas e pela vibrante vida noturna.</p>
+        <button class="saiba-mais" data-id="24">Saiba Mais</button>
+      </div>
+    </div>
+  </section>
+
+  </section>>
+
+
+  </section>
+  <!-- banner2 -->
+  <div class="anuncio">
+    <div class="anuncio">
+      <img src="/IMAGENS/banner4.png" style="width:100%">
+    </div>
+  </div>
+  <section class="beaches-container">
+    <!-- Conjunto 3 -->
+    <div class="beaches-set">
+      <div class="beach">
+        <img src="/IMAGENS/highlight1.png" alt="Praia de Morro Branco">
+        <h3>Praia de Morro Branco</h3>
+        <p>Localizada no Ceará, a Praia de Morro Branco é famosa pelas suas falésias coloridas, além de suas águas
+          calmas e paisagens deslumbrantes.</p>
+        <button class="saiba-mais" data-id="25">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight2.jpeg" alt="Praia de Trancoso">
+        <h3>Praia de Trancoso</h3>
+        <p>Localizada na Bahia, Trancoso é um destino popular que combina belas praias, vilas charmosas e um ambiente
+          descontraído e acolhedor.</p>
+        <button class="saiba-mais" data-id="26">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight3.jpeg" alt="Praia de Carcará">
+        <h3>Praia de Carcará</h3>
+        <p>Localizada em Alagoas, a Praia de Carcará é uma das mais isoladas, oferecendo uma atmosfera tranquila, com
+          águas límpidas e paisagens preservadas.</p>
+        <button class="saiba-mais" data-id="27">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight4.jpg" alt="Praia de Pipa">
+        <h3>Praia de Pipa</h3>
+        <p>Localizada no Rio Grande do Norte, Pipa é uma das praias mais conhecidas do Brasil, famosa pela sua vida
+          noturna animada e pela natureza exuberante ao redor.</p>
+        <button class="saiba-mais" data-id="28">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight5.jpg" alt="Praia de Cacimbinhas">
+        <h3>Praia de Cacimbinhas</h3>
+        <p>Localizada em Alagoas, a Praia de Cacimbinhas é um paraíso escondido, com águas transparentes e uma paisagem
+          intocada, ideal para quem busca tranquilidade.</p>
+        <button class="saiba-mais" data-id="29">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight6.jpeg" alt="Praia de João Pessoa">
+        <h3>Praia de João Pessoa</h3>
+        <p>Localizada na Paraíba, a Praia de João Pessoa é conhecida pela sua excelente infraestrutura e pelas águas
+          calmas, sendo um ótimo destino para famílias.</p>
+        <button class="saiba-mais" data-id="30">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight7.jpeg" alt="Praia do Litoral Norte">
+        <h3>Praia do Litoral Norte</h3>
+        <p>Localizada em São Paulo, o Litoral Norte oferece diversas praias encantadoras, com belas paisagens, águas
+          calmas e excelente infraestrutura.</p>
+        <button class="saiba-mais" data-id="31">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight8.webp" alt="Praia do Forte de São José">
+        <h3>Praia do Forte de São José</h3>
+        <p>Localizada em Porto Seguro, Bahia, a Praia do Forte de São José oferece uma ótima infraestrutura, com águas
+          claras, piscinas naturais e coqueirais.</p>
+        <button class="saiba-mais" data-id="32">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight9.png" alt="Praia do Guarujá">
+        <h3>Praia do Guarujá</h3>
+        <p>Localizada no litoral paulista, a Praia do Guarujá é conhecida pela sua grande diversidade de praias, ideais
+          para a prática de esportes náuticos e atividades de lazer.</p>
+        <button class="saiba-mais" data-id="33">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight10.webp" alt="Praia de Maracajaú">
+        <h3>Praia de Maracajaú</h3>
+        <p>Localizada no Rio Grande do Norte, a Praia de Maracajaú é famosa por suas águas cristalinas e suas piscinas
+          naturais, um excelente local para o mergulho.</p>
+        <button class="saiba-mais" data-id="34">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight11.webp" alt="Praia de Praia do Francês">
+        <h3>Praia do Francês</h3>
+        <p>Localizada em Alagoas, a Praia do Francês é ideal para quem gosta de esportes aquáticos, com águas claras e
+          ondas perfeitas para o surfe.</p>
+        <button class="saiba-mais" data-id="35">Saiba Mais</button>
+      </div>
+      <div class="beach">
+        <img src="/IMAGENS/highlight12.webp" alt="Praia de Barra Grande">
+        <h3>Praia de Barra Grande</h3>
+        <p>Localizada em Barra Grande, Bahia, esta praia é conhecida pelas suas águas tranquilas, ideais para quem busca
+          relaxar e aproveitar a beleza natural.</p>
+        <button class="saiba-mais" data-id="36">Saiba Mais</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- banner2 -->
+  <div class="anuncio">
+    <div class="anuncio">
+      <img src="/IMAGENS/banner2r.png" style="width:100%; height: 40%;">
+    </div>
+  </div>
+
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h3>Se inscreva para Ofertas</h3>
+    <form action="#" method="post">
+      <input type="email" placeholder="Digite seu email">
+      <button type="submit">Inscrever-se</button>
+    </form>
+  </section>
+  <!-- Newsletter fim -->
+
+  <!-- Footer -->
+  <footer>
     <div class="footer-content">
-        <div id="Contato">
-            <h4>Contato</h4>
-            <p>WhatsApp: (99) 99999-9999</p>
-            <p>Email: contato@exemplo.com</p>
-            <p>Telefone: (11) 3333-3333</p>
-        </div>
-        <div id="Sobre">
-            <h4>Sobre</h4>
-            <p><a href="#">Quem Somos</a></p>
-            <p><a href="#">Política de Privacidade</a></p>
-            <p><a href="#">Termos de Serviço</a></p>
-        </div>
-        <div>
-            <h4>Categorias</h4>
-            <p><a href="#">Home</a></p>
-            <p><a href="#">Praias</a></p>
-            <p><a href="#">Blog</a></p>
-        </div>
-        <div class="social">
-            <h4>Redes Sociais</h4>
-            <img src="/IMAGENS/facebook-icon.png" alt="Facebook">
-            <img src="/IMAGENS/instagram-icon.png" alt="Instagram">
-        </div>
+      <div id="Contato">
+        <h4>Contato</h4>
+        <p>WhatsApp: (99) 99999-9999</p>
+        <p>Email: contato@exemplo.com</p>
+        <p>Telefone: (11) 3333-3333</p>
+      </div>
+      <div id="Sobre">
+        <h4>Sobre</h4>
+        <p><a href="/Sobre.html">Quem Somos</a></p>
+        <p><a href="/politicapriv.html">Política de Privacidade</a></p>
+        <p><a href="/termos.html">Termos de Serviço</a></p>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <p><a href="#">Home</a></p>
+        <p><a href="#">Praias</a></p>
+        <p><a href="#">Blog</a></p>
+      </div>
+      <div class="social">
+        <h4>Redes Sociais</h4>
+        <img src="/IMAGENS/facebook.png" alt="Facebook">
+        <img src="/IMAGENS/insta.png" alt="Instagram">
+      </div>
     </div>
-</footer>
+  </footer>
+  <!-- Footer fim -->
+
+  <script src="/JS/search.js"></script>
+  <script src="/JS/menu.js"></script>
+  <script src="/JS/login.js"></script>
+  <script src="/JS/carrosel.js"></script>
+  <script src="/JS/modal.js"></script>
+
+
 </body>
 
 </html>

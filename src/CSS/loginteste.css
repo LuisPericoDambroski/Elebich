@@ -69,64 +69,128 @@ header nav ul li a:hover {
 }
 
 .user-icons img {
-  max-height: 2rem;
-  /* Ajusta para um tamanho fixo */
-  width: auto;
-  /* Mantém proporções */
+  height: auto; /* Remove a altura fixa */
+  max-width: 2rem; /* Define uma largura máxima para o ícone */
+  width: auto; /* Mantém a proporção da imagem */
   cursor: pointer;
 }
 
-/* Search Container */
+
+/* Botão de Login */
+.login-button {
+  background-color: #2196F3; /* Azul padrão */
+  color: #FFFFFF; /* Texto branco */
+  border: none; /* Remove bordas */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  padding: 0.625rem 1.25rem; /* Espaçamento interno */
+  font-size: 1rem; /* Tamanho do texto */
+  cursor: pointer; /* Cursor de clique */
+  transition: background-color 0.3s; /* Animação suave */
+}
+
+/* Hover do Botão de Login */
+.login-button:hover {
+  background-color: #1769aa; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Formulário de Login */
+.login-form-container {
+  position: absolute;
+  top: 4rem; /* Posição relativa ao topo */
+  right: 2rem; /* Posição relativa à direita */
+  width: 20rem; /* Largura fixa */
+  background-color: #FFFFFF; /* Fundo branco */
+  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Sombra leve */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  padding: 1.5rem; /* Espaçamento interno */
+  display: none; /* Inicialmente oculto */
+  z-index: 10; /* Garante visibilidade acima de outros elementos */
+}
+
+/* Inputs do Formulário */
+.login-form-container input[type="email"],
+.login-form-container input[type="password"] {
+  width: 100%; /* Largura total */
+  padding: 0.625rem; /* Espaçamento interno */
+  margin-bottom: 1rem; /* Espaçamento inferior */
+  border: 1px solid #ccc; /* Borda cinza */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho do texto */
+  box-sizing: border-box; /* Inclui padding no cálculo de largura */
+  outline: none; /* Remove o destaque ao focar */
+  transition: border-color 0.3s; /* Animação suave */
+}
+
+/* Efeito ao Focar nos Inputs */
+.login-form-container input:focus {
+  border-color: #2196F3; /* Borda azul ao focar */
+}
+
+/* Rótulos */
+.login-form-container label {
+  font-size: 1rem; /* Tamanho do texto */
+  color: #333; /* Cor do texto */
+  display: block; /* Exibe como bloco */
+  margin-bottom: 0.5rem; /* Espaçamento inferior */
+}
+
+/* Botão de Enviar no Formulário */
+.login-form-container button {
+  background-color: #2196F3; /* Azul padrão */
+  color: #FFFFFF; /* Texto branco */
+  border: none; /* Remove bordas */
+  border-radius: 0.625rem; /* Bordas arredondadas */
+  padding: 0.625rem 1.25rem; /* Espaçamento interno */
+  font-size: 1rem; /* Tamanho do texto */
+  cursor: pointer; /* Cursor de clique */
+  width: 100%; /* Largura total */
+  transition: background-color 0.3s; /* Animação suave */
+}
+
+.login-form-container button:hover {
+  background-color: #1769aa; /* Azul mais escuro ao passar o mouse */
+}
+
+
+
+
+/* Search Bar */
 .search-container {
   position: relative;
-  /* Mantém a referência para elementos posicionados */
   display: flex;
   align-items: center;
 }
 
 .search-container img {
-  max-height: 1.875rem;
-  /* 30px */
+  max-height: 1.875rem; /* 30px */
   cursor: pointer;
 }
 
-.search-container .search-bar {
+.search-bar {
   display: none;
-  /* Inicialmente oculto */
   position: absolute;
-  /* Posicionado acima dos outros elementos */
   right: 0;
-  /* Alinha à direita do container */
   transform: translateX(-100%);
-  /* Expande para a esquerda */
   width: 0;
-  /* Largura inicial zero */
   max-width: 15rem;
-  /* Largura máxima ajustada (240px) */
   padding: 0.5rem 1rem;
   border: 2px solid #2196F3;
   border-radius: 1.25rem;
   outline: none;
   font-size: 1rem;
-  color: #000000;
+  color: #ffffff;
   background-color: #FFFFFF;
   z-index: 10;
-  /* Garante que fique acima dos outros elementos */
   transition: all 0.3s ease;
-  /* Animação suave ao expandir */
 }
 
-.search-container.active .search-bar {
+.search-bar.active {
   display: block;
-  width: 10rem;
-  /* Largura expandida ao clicar */
+  width: 10rem; /* Largura expandida */
+  background-color: #FFFFFF;
+  color: #0f0f0f;
 }
 
-/* Ajuste para o ícone */
-.search-container img {
-  z-index: 11;
-  /* garantir que o ícone esteja acima da barra */
-}
 
 /* User Menu */
 .user-menu {
@@ -171,6 +235,12 @@ header nav ul li a:hover {
   background-color: #1769aa;
 }
 
+/* Ajuste adicional para manter proporções */
+.search-container img {
+  z-index: 11;
+}
+
+
 /* Área do Usuário */
 .usuario {
   display: flex;
@@ -200,12 +270,22 @@ header nav ul li a:hover {
   padding: 0.9375rem 3.125rem;
   transition: background-color 0.4s;
   margin-right: 6.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.usuario .btn-sair a {
+  color: inherit; /* Mantém a cor branca do botão */
+  text-decoration: none; /* Remove o sublinhado */
+  display: inline-block; /* Mantém a estrutura sem quebrar o layout */
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 .usuario .btn-sair:hover {
   background-color: #DD2C00;
 }
-
 /* Ultima review */
 .ultima-review {
   display: flex;
@@ -277,7 +357,6 @@ header nav ul li a:hover {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: #bbb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,6 +416,8 @@ header nav ul li a:hover {
   /* A imagem vai preencher toda a largura da caixa */
 }
 
+
+/* Comentários */
 .comentarios {
   position: relative;
   padding: 3.75rem 1.25rem;
@@ -392,46 +473,7 @@ header nav ul li a:hover {
   /* Aumentei a largura das caixas de comentário */
 }
 
-/* Header da review */
-.review-header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 0.625rem;
-}
-
-.user-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-color: #bbb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: white;
-}
-
-.user-name {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin-left: 0.625rem;
-  flex-grow: 1;
-}
-
-.stars img {
-  width: 6.25rem;
-  height: auto;
-}
-
-.review-text {
-  margin-top: 0.625rem;
-  font-size: 0.875rem;
-}
-
-/* Área dos Ícones */
+/* Área dos Ícones  */
 .icones {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

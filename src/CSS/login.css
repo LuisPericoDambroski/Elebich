@@ -1,18 +1,20 @@
 /* Estilos Gerais */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    width: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  width: 100%;
 }
 
-h1, h2, h3 {
-    color: #333;
+h1,
+h2,
+h3 {
+  color: #333;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Header */
@@ -71,43 +73,6 @@ header nav ul li a:hover {
   max-width: 2rem; /* Define uma largura máxima para o ícone */
   width: auto; /* Mantém a proporção da imagem */
   cursor: pointer;
-}
-
-/* Search Bar */
-.search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-container img {
-  max-height: 1.875rem; /* 30px */
-  cursor: pointer;
-}
-
-.search-bar {
-  display: none;
-  position: absolute;
-  right: 0;
-  transform: translateX(-100%);
-  width: 0;
-  max-width: 15rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #2196F3;
-  border-radius: 1.25rem;
-  outline: none;
-  font-size: 1rem;
-  color: #ffffff;
-  background-color: #FFFFFF;
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-
-.search-bar.active {
-  display: block;
-  width: 10rem; /* Largura expandida */
-  background-color: #FFFFFF;
-  color: #0f0f0f;
 }
 
 
@@ -186,209 +151,542 @@ header nav ul li a:hover {
   background-color: #1769aa; /* Azul mais escuro ao passar o mouse */
 }
 
+
+
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container img {
+  max-height: 1.875rem; /* 30px */
+  cursor: pointer;
+}
+
+.search-bar {
+  display: none;
+  position: absolute;
+  right: 0;
+  transform: translateX(-100%);
+  width: 0;
+  max-width: 15rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #2196F3;
+  border-radius: 1.25rem;
+  outline: none;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #FFFFFF;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.search-bar.active {
+  display: block;
+  width: 10rem; /* Largura expandida */
+  background-color: #FFFFFF;
+  color: #0f0f0f;
+}
+
+
+/* User Menu */
+.user-menu {
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  background-color: #FFFFFF;
+  border-radius: 0.625rem;
+  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+  padding: 0.5rem;
+}
+
+.user-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-menu ul li {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.user-menu ul li:last-child {
+  margin-bottom: 0;
+}
+
+.user-menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+  background-color: #2196F3;
+  border-radius: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s;
+}
+
+.user-menu ul li a:hover {
+  background-color: #1769aa;
+}
+
+/* Ajuste adicional para manter proporções */
+.search-container img {
+  z-index: 11;
+}
+
+
 /* Área do Usuário */
 .usuario {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    background-color: #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.125rem;
+  background-color: #f3f3f3;
 }
 
 .usuario-info {
-    display: flex;
-    align-items: center;
-    gap: 35px;
+  display: flex;
+  align-items: center;
+  gap: 2.1875rem;
 }
 
 .usuario-icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
 }
 
 .usuario .btn-sair {
-    background-color: #000000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 15px 40px;
-    transition: background-color 0.3s;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 0.4375rem;
+  padding: 0.9375rem 3.125rem;
+  transition: background-color 0.4s;
+  margin-right: 6.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.usuario .btn-sair a {
+  color: inherit; /* Mantém a cor branca do botão */
+  text-decoration: none; /* Remove o sublinhado */
+  display: inline-block; /* Mantém a estrutura sem quebrar o layout */
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 .usuario .btn-sair:hover {
-    background-color: #DD2C00;
+  background-color: #DD2C00;
 }
-
-/* Última Review */
+/* Ultima review */
 .ultima-review {
-    padding: 60px;
-    text-align: start;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  /* Deixa o conteúdo à esquerda e à direita separados */
+  padding: 1.875rem;
+  /* Ajuste o espaço ao redor da seção */
 }
 
-.ultima-review .review-box img {
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
+.left-section {
+  flex: 1;
+  text-align: left;
+  margin-right: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Alinha tudo antes do botão */
 }
+
+.left-section h2 {
+  margin-bottom: 0.9375rem;
+  font-size: 1.875rem;
+}
+
+.left-section p {
+  margin: 0;
+}
+
+.review-button {
+  align-self: flex-start;
+  background-color: #2AB7A9;
+  color: white;
+  padding: 0.625rem 3.75rem;
+  border: none;
+  border-radius: 0.4375rem;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  margin-top: 2.1875rem;
+  margin-bottom: 2.1875rem;
+}
+
+.review-container {
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.875rem;
+  margin-right: 9.375rem;
+}
+
+.review-box {
+  width: 15.625rem;
+  background-color: #d3d3d3;
+  padding: 0.9375rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+
+.user-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: white;
+}
+
+.user-icon img {
+  width: 2.5rem;
+  /* Ajuste o tamanho conforme necessário */
+  height: 2.5rem;
+  /* Deve ser o mesmo valor para manter a imagem quadrada */
+  border-radius: 50%;
+  /* Torna a imagem circular */
+  object-fit: cover;
+  /* Garante que a imagem preencha o espaço da caixa sem distorcer */
+}
+
+.user-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-left: 0.625rem;
+  flex-grow: 1;
+}
+
+.stars img {
+  width: 6.25rem;
+  height: auto;
+}
+
+.review-text {
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+}
+
+.right-section {
+  max-width: 100%;
+  width: 62.5rem;
+  /* Ajuste o tamanho da large box para dar mais espaço */
+  height: auto;
+  /* Ajuste a altura conforme necessário */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-left: 0.9375rem;
+  padding: 0.625rem 0.625rem;
+  /* Ajuste o padding para abrir mais espaço na borda direita */
+}
+
+.large-box-image {
+  max-width: 80%;
+  width: 62.5rem;
+  border-radius: 1.5rem;
+  /* A imagem vai preencher toda a largura da caixa */
+}
+
 
 /* Comentários */
 .comentarios {
-    padding: 60px 20px;
-    display: flex;
-    justify-content: space-between;
+  position: relative;
+  padding: 3.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.opacidade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #E3E3E3;
+  /* Fundo com opacidade */
+  z-index: -1;
+  /* Fica atrás do conteúdo */
 }
 
 .comentarios h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 40px;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2.5rem;
 }
 
 .comentarios-container {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 2.5rem;
 }
 
 .coments {
-    text-align: start;
-    padding: 40px;
+  text-align: start;
+  padding: 2.5rem;
 }
 
 .comentarios-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
 }
 
 .comentario {
-    background-color: #E0E0E0;
-    height: 120px;
-    width: 800px;
-    border-radius: 5px;
+  background-color: #d3d3d3;
+  /* Cor de fundo da caixa de comentário */
+  padding: 0.9375rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 56.25rem;
+  /* Aumentei a largura das caixas de comentário */
 }
 
-/* Área dos Ícones */
+/* Área dos Ícones  */
 .icones {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    grid-template-rows: auto auto; /* Ajusta a altura das linhas automaticamente */
-    gap: 40px; /* Espaçamento entre os ícones */
-    justify-content: center; /* Centraliza os ícones no grid */
-    align-items: center; /* Alinha os ícones verticalmente */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 colunas */
+  grid-template-rows: auto auto;
+  /* Ajusta a altura das linhas automaticamente */
+  gap: 2.5rem;
+  /* Espaçamento entre os ícones */
+  justify-content: center;
+  /* Centraliza os ícones no grid */
+  align-items: center;
+  /* Alinha os ícones verticalmente */
+  margin-right: 10rem;
 }
 
 .icone {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
 }
 
 .icone-img-bg {
-    background-color: #2196F3;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #2196F3;
+  border-radius: 50%;
+  width: 6.25rem;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .icone-img-bg img {
-    width: 60px;
-    height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
 }
 
 .icone h3 {
-    font-size: 1rem;
-    color: #333;
-    margin: 10px 0 5px;
+  font-size: 1rem;
+  color: #333;
+  margin: 0.625rem 0 0.3125rem;
 }
 
 .icone p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.4;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
 }
 
 /* Centralizar o terceiro ícone */
 .icones div:nth-child(3) {
-    grid-column: 1 / 3; /* Faz o ícone ocupar o espaço centralizado */
-    justify-self: center; /* Centraliza na largura */
+  grid-column: 1 / 3;
+  /* Faz o ícone ocupar o espaço centralizado */
+  justify-self: center;
+  /* Centraliza na largura */
 }
 
 /* Fazer Review */
 .fazer-review {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  text-align: center;
 }
 
 textarea {
-    width: 80%;
-    height: 200px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #CCC;
+  width: 80%;
+  height: 12.5rem;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  border: 1px solid #CCC;
 }
 
 .btn-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-.Reviewai{
-    display: flex;
-   justify-content: start;
-    width: 100%;
-    
+
+.Reviewai {
+  display: flex;
+  justify-content: start;
+  width: 100%;
 }
-.Review{
-    background-color: #383838;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
+
+.Review {
+  background-color: #383838;
+  color: white;
+  border: none;
+  border-radius: 0.3125rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s;
 }
 
 .btn-enviar {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
+  background-color: #2AB7A9;
+  color: white;
+  border: none;
+  border-radius: 0.3125rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s;
 }
 
 .btn-enviar:hover {
-    background-color: #388E3C;
+  background-color: #2196F3;
 }
-
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #222;
-    color: #FFF;
+  color: #000000;
+  padding: 2rem;
+  display: flex;
+  justify-content: center; /* Distribui os itens ao longo da linha */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  flex-wrap: wrap; /* Permite que os itens que não cabem se movam para a próxima linha em telas pequenas */
+}
+
+footer p {
+  font-size: 1rem;
+  margin: 0;
 }
 
 footer nav {
-    margin-top: 10px;
+  display: flex;
+  gap: 1.5rem; /* Espaçamento entre os links */
 }
 
 footer nav a {
-    color: #FFF;
-    margin: 0 10px;
-    text-decoration: none;
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
 }
+
+footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade para tela menor */
+@media (max-width: 768px) {
+  .comentarios {
+    padding: 10vh 5vw;
+    /* Ajusta o padding para telas menores */
+  }
+
+  .opacidade {
+    opacity: 0.5;
+    /* Reduz a opacidade em telas menores para maior contraste */
+  }
+
+  .comentarios h2 {
+    font-size: 2.5rem;
+  }
+
+  .comentarios-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .comentarios-list {
+    width: 100%;
+  }
+
+  .comentario {
+    width: 100%;
+  }
+}
+
+/* Responsividade para garantir que a opacidade não desapareça e ocupe toda a tela */
+@media (max-width: 768px) {
+  .comentarios {
+    position: relative;
+    padding: 2rem 1rem;
+    /* Ajuste do padding para dispositivos móveis */
+    overflow: hidden;
+    /* Garantir que a opacidade não saia da área do container */
+  }
+
+  .comentarios .opacidade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Garantir que a largura ocupe 100% da largura da viewport */
+    height: 100vh;
+    /* Garantir que a altura ocupe 100% da altura da viewport */
+    background: rgba(0, 0, 0, 0.5);
+    /* Ajuste na cor da opacidade, se necessário */
+    z-index: -1;
+    /* Manter atrás do conteúdo */
+  }
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .ultima-review {
+    flex-direction: column;
+    /* Organiza a última review em coluna */
+    text-align: center;
+  }
+
+  .right-section {
+    width: 80vw;
+    /* Aumenta a largura da imagem em telas menores */
+  }
+
+  .large-box-image {
+    width: 90%;
+    /* Imagem ocupa mais largura em telas menores */
+  }
+}
+

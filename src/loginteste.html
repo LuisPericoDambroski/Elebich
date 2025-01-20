@@ -5,41 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elibeach</title>
-    <link rel="stylesheet" href="/Elebich/src/CSS/loginteste.css">
+    <link rel="stylesheet" href="CSS/loginteste.css">
 </head>
 
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <a href="/Elebich/src/index.html">
-                <img src="/Elebich/src/IMAGENS/logo.png" alt="Elibeach Logo">
+            <a href="index.html">
+                <img src="/IMAGENS/logo.png" alt="Elibeach Logo">
             </a>
         </div>
         <nav>
             <ul>
-                <li><a href="/Elebich/src/Sobre.html">Sobre</a></li>
-                <li><a href="/Elebich/src/Praias.html">Praias</a></li>
-                <li><a href="/Elebich/src/Blog.html">Blog</a></li>
+                <li><a href="/Sobre.html">Sobre</a></li>
+                <li><a href="/Praias.html">Praias</a></li>
+                <li><a href="#">Blog</a></li>
                 <li><a href="#Contato">Contato</a></li>
             </ul>
         </nav>
         <div class="user-icons">
+            <!-- Botão de pesquisa -->
             <div class="search-container">
-                <img src="/Elebich/src/IMAGENS/search-icon.png" alt="Search" id="search-icon">
+                <img src="/IMAGENS/search-icon.png" alt="Search" id="search-icon">
                 <input type="text" class="search-bar" placeholder="Search in site">
             </div>
 
-            <img src="/Elebich/src/IMAGENS/user-icon.png" alt="User" onclick="toggleUserMenu()">
+            <!-- Ícone do Usuário (aparece após o login) -->
+            <div class="user-icon" id="user-icon" style="display: none;" onclick="toggleUserMenu()">
+                <img src="/IMAGENS/user-icon.png" alt="User Icon" />
+            </div>
+            <!-- Botão de Login (aparece até o login ser realizado) -->
+            <div class="user-login" id="user-login">
+                <button class="login-button" id="login-button" onclick="toggleLoginForm()">Login</button>
+            </div>
+
+            <!-- Formulário de Login -->
+            <div class="login-form-container" id="login-form" style="display: none;">
+                <form autocomplete="off">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required
+                        autocomplete="email" />
+
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required
+                        autocomplete="current-password" />
+
+                    <button type="button" onclick="loginUser()">Entrar</button>
+                </form>
+            </div>
+
+
+            <!-- Menu de usuário (inicialmente escondido) -->
+            <div class="user-menu" id="user-menu" style="display: none;">
+                <ul>
+                    <li><a href="/loginteste.html">Gerenciar Conta</a></li>
+                    <li><a href="/loginteste.html">Reviews</a></li>
+                    <li><a href="/loginteste.html">Notificações</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="user-menu">
-            <ul>
-                <li><a href="/Login.html">Gerenciar conta</a></li>
-                <li><a href="/Login.html">Reviews</a></li>
-                <li><a href="/Login.html">Notificações</a></li>
-            </ul>
-        </div>
-        <script src="/Elebich/src/JS/login.js"> aaa </script>
+
+        <script src="/JS/search.js"></script>
+        <script src="/JS/menu.js"></script>
+        <script src="/JS/login.js"></script>
     </header>
 
     <!-- Main Content -->
@@ -47,17 +76,17 @@
         <!-- Área do Usuário -->
         <section class="usuario">
             <div class="usuario-info">
-                <img src="/Elebich/src/IMAGENS/avatar.png" alt="Ícone do Usuário" class="usuario-icon">
+                <img src="IMAGENS/avatar.png" alt="Ícone do Usuário" class="usuario-icon">
                 <div>
                     <h1>Perfil do Usuário</h1>
                     <p>Inscreva-se na nossa newsletter para receber atualizações e ofertas exclusivas..</p>
                 </div>
             </div>
-            <button class="btn-sair">Sair</button>
+            <button class="btn-sair"><a href="#" onclick="logoutUser()">Sair</a></button>
         </section>
 
-         <!-- Última Review -->
-         <section class="ultima-review">
+        <!-- Última Review -->
+        <section class="ultima-review">
             <div class="left-section">
                 <h2>Última Review</h2>
                 <p>Veja o que nossos usuários estão dizendo</p>
@@ -65,95 +94,95 @@
                 <div class="review-container">
                     <div class="review-box">
                         <div class="review-header">
-                            <div class="user-icon"> <img src="/Elebich/src/IMAGENS/neymar.png" alt=""></div>
+                            <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
                             <div class="user-name">User 1</div>
-                            <div class="stars"><img src="/Elebich/src/IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
                         </div>
                         <div class="review-text">Excelente praia! Super recomendo.</div>
                     </div>
                     <div class="review-box">
                         <div class="review-header">
-                            <div class="user-icon"> <img src="/Elebich/src/IMAGENS/neymar.png" alt=""></div>
+                            <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
                             <div class="user-name">User 2</div>
-                            <div class="stars"><img src="/Elebich/src/IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
                         </div>
                         <div class="review-text">Amei a experiência, com certeza vou ir novamente!</div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="right-section">
-                <img src="/Elebich/src/IMAGENS/highlight9.png" alt="Descrição da imagem" class="large-box-image">
+                <img src="IMAGENS/highlight9.png" alt="Descrição da imagem" class="large-box-image">
             </div>
-            
+
         </section>
         <!-- comentarios -->
 
-<section class="comentarios">
-    <div class="opacidade"></div>
-    <div class="coments">
-        <h2>Comentários</h2>
-        <div class="comentarios-container">
-            <div class="comentarios-list">
-                <!-- Box de Comentário 1 -->
-                <div class="comentario">
-                    <div class="review-header">
-                        <div class="user-icon"> <img src="/Elebich/src/IMAGENS/neymar.png" alt=""></div>
-                        <div class="user-name">Comentário 1</div>
-                        <div class="stars"><img src="/Elebich/src/IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
-                    </div>
-                    <div class="review-text">Ótima experiência, recomendo para todos!</div>
-                </div>
+        <section class="comentarios">
+            <div class="opacidade"></div>
+            <div class="coments">
+                <h2>Comentários</h2>
+                <div class="comentarios-container">
+                    <div class="comentarios-list">
+                        <!-- Box de Comentário 1 -->
+                        <div class="comentario">
+                            <div class="review-header">
+                                <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                                <div class="user-name">Comentário 1</div>
+                                <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            </div>
+                            <div class="review-text">Ótima experiência, recomendo para todos!</div>
+                        </div>
 
-                <!-- Box de Comentário 2 -->
-                <div class="comentario">
-                    <div class="review-header">
-                        <div class="user-icon"> <img src="/Elebich/src/IMAGENS/neymar.png" alt=""></div>
-                        <div class="user-name">Comentário 2</div>
-                        <div class="stars"><img src="/Elebich/src/IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
-                    </div>
-                    <div class="review-text">Amei, tudo de excelente qualidade!</div>
-                </div>
+                        <!-- Box de Comentário 2 -->
+                        <div class="comentario">
+                            <div class="review-header">
+                                <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                                <div class="user-name">Comentário 2</div>
+                                <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            </div>
+                            <div class="review-text">Amei, tudo de excelente qualidade!</div>
+                        </div>
 
-                <!-- Box de Comentário 3 -->
-                <div class="comentario">
-                    <div class="review-header">
-                        <div class="user-icon"> <img src="/Elebich/src/IMAGENS/neymar.png" alt=""></div>
-                        <div class="user-name">Comentário 3</div>
-                        <div class="stars"><img src="/Elebich/src/IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                        <!-- Box de Comentário 3 -->
+                        <div class="comentario">
+                            <div class="review-header">
+                                <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                                <div class="user-name">Comentário 3</div>
+                                <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            </div>
+                            <div class="review-text">Boa qualidade, mas achei o preço um pouco elevado.</div>
+                        </div>
                     </div>
-                    <div class="review-text">Boa qualidade, mas achei o preço um pouco elevado.</div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Área dos Ícones (mantendo como está) -->
-    <div class="icones">
-        <div class="icone">
-            <div class="icone-img-bg">
-                <img src="/Elebich/src/IMAGENS/e-mail.png" alt="Ícone 1">
+            <!-- Área dos Ícones (mantendo como está) -->
+            <div class="icones">
+                <div class="icone">
+                    <div class="icone-img-bg">
+                        <img src="IMAGENS/e-mail.png" alt="Ícone 1">
+                    </div>
+                    <h3>Exclusive Offers</h3>
+                    <p>Access to special promotions.</p>
+                </div>
+                <div class="icone">
+                    <div class="icone-img-bg">
+                        <img src="IMAGENS/noticia.png" alt="Ícone 2">
+                    </div>
+                    <h3>Stay Informed</h3>
+                    <p>Stay up-to-date on our latest news.</p>
+                </div>
+                <div class="icone">
+                    <div class="icone-img-bg">
+                        <img src="IMAGENS/anuncio.png" alt="Ícone 3">
+                    </div>
+                    <h3>Announce</h3>
+                    <p>Be the first to know about new arrivals.</p>
+                </div>
             </div>
-            <h3>Exclusive Offers</h3>
-            <p>Access to special promotions.</p>
-        </div>
-        <div class="icone">
-            <div class="icone-img-bg">
-                <img src="/Elebich/src/IMAGENS/noticia.png" alt="Ícone 2">
-            </div>
-            <h3>Stay Informed</h3>
-            <p>Stay up-to-date on our latest news.</p>
-        </div>
-        <div class="icone">
-            <div class="icone-img-bg">
-                <img src="/Elebich/src/IMAGENS/anuncio.png" alt="Ícone 3">
-            </div>
-            <h3>Announce</h3>
-            <p>Be the first to know about new arrivals.</p>
-        </div>
-    </div>
-</section>
-        
+        </section>
+
         <section class="fazer-review">
             <div class="Reviewai">
                 <button class="Review">Review</button>
@@ -163,7 +192,7 @@
                 <button class="btn-enviar">Enviar</button>
             </div>
         </section>
-        
+
     </main>
 
     <!-- Footer -->

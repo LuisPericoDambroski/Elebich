@@ -315,6 +315,7 @@ header nav ul li a:hover {
 }
 
 .right-section {
+  max-width: 100%;
   width: 62.5rem;
   /* Ajuste o tamanho da large box para dar mais espaço */
   height: auto;
@@ -330,7 +331,9 @@ header nav ul li a:hover {
 }
 
 .large-box-image {
-  width: 80%;
+  max-width: 80%;
+  width: 62.5rem;
+  border-radius: 1.5rem;
   /* A imagem vai preencher toda a largura da caixa */
 }
 

@@ -226,11 +226,11 @@ header nav ul li a:hover {
 
 
 /* Banner */
-  
+
 .slideshow-container {
   width: 100%;
   position: relative;
-  
+
   overflow: hidden;
 }
 
@@ -239,6 +239,7 @@ header nav ul li a:hover {
   height: 30vh;
   object-fit: cover;
 }
+
 .anuncio {
   width: 100%;
   position: relative;
@@ -252,7 +253,8 @@ header nav ul li a:hover {
   object-fit: cover;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -271,7 +273,8 @@ header nav ul li a:hover {
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -304,9 +307,11 @@ header nav ul li a:hover {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
+
 .mySlides {
   display: none;
   opacity: 0;
@@ -320,11 +325,16 @@ header nav ul li a:hover {
 
 
 .bannermeio {
-  width: 100%;          /* Largura de 100% da tela */
-  height: 50vh;         /* Altura de aproximadamente 50% da altura da janela */
-  background-image: url('/IMAGENS/banner2r.png'); /* Defina o caminho da imagem */
-  background-size: cover;  /* Faz a imagem cobrir toda a área da div, mantendo a proporção */
-  background-position: center; /* Centraliza a imagem na div */
+  width: 100%;
+  /* Largura de 100% da tela */
+  height: 50vh;
+  /* Altura de aproximadamente 50% da altura da janela */
+  background-image: url('/IMAGENS/Anuncio3.png');
+  /* Defina o caminho da imagem */
+  background-size: cover;
+  /* Faz a imagem cobrir toda a área da div, mantendo a proporção */
+  background-position: center;
+  /* Centraliza a imagem na div */
 }
 
 
@@ -333,7 +343,7 @@ header nav ul li a:hover {
   height: 90vh;
   object-fit: cover;
   align-self: center;
-  
+
 }
 
 /* Seção de Categorias */
@@ -367,7 +377,7 @@ header nav ul li a:hover {
 }
 
 .categories .category button {
-  position: absolute;
+
   bottom: 10px;
   right: 10px;
   background-color: #2196F3;
@@ -377,7 +387,7 @@ header nav ul li a:hover {
   font-size: 16px;
   border-radius: 1.25rem;
   cursor: pointer;
-  z-index: 2;
+
   /* Garante que o botão fique por cima */
   transition: background-color 0.3s;
 }
@@ -401,77 +411,44 @@ header nav ul li a:hover {
   transform: scale(1.05);
 }
 
-/* Anuncio */
-.anuncio {
-  width: 100%;
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-}
-
-.anuncio img {
-  width: 100%;
-  height: 30vh;
-  object-fit: cover;
-}
-
 #anuncios {
   display: flex;
-  /* Flexbox para organizar os anúncios em linha */
-  justify-content: flex-start;
-  /* Alinha os itens à esquerda */
   gap: 20px;
-  /* Espaço entre o Anúncio1 e a coluna de anúncios à direita */
   align-items: flex-start;
-  /* Alinha os itens ao topo */
 }
 
 .anuncio1 {
-  flex: 0 0 auto;
-  /* Impede que o Anúncio1 se ajuste ao tamanho da tela */
-  height: 100%;
-  /* Define que o Anúncio1 ocupará toda a altura do contêiner */
-  max-height: 500px;
-  /* Ajuste de altura máxima, caso necessário */
+  flex: 1;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.anuncio1 img {
   width: 100%;
-  /* Garante que a imagem ocupe toda a largura do Anúncio1 */
-  box-sizing: border-box;
-  /* Considera o padding na largura/altura total */
+  height: auto;
+  object-fit: cover;
 }
 
 .anuncios-direita {
   display: flex;
-  /* Organiza os anúncios à direita em coluna */
   flex-direction: column;
-  /* Empilha os anúncios verticalmente */
   gap: 20px;
-  /* Espaçamento entre os anúncios */
-  height: 100%;
-  /* Garante que a altura seja a mesma do Anúncio1 */
-  max-height: 500px;
-  /* Limita a altura total para evitar problemas de overflow */
+  flex: 1;
+  max-width: 500px;
 }
 
 .anuncio2,
 .anuncio3 {
-  flex: 1 1 auto;
-  /* Faz com que os anúncios se ajustem à altura disponível */
-  width: 100%;
-  /* Garante que ocupem a largura disponível */
-  box-sizing: border-box;
-  /* Considera o padding na largura/altura total */
+  flex: 1;
+  overflow: hidden;
 }
 
-.anuncio1 img,
 .anuncio2 img,
 .anuncio3 img {
   width: 100%;
-  /* Garante que as imagens se ajustem ao tamanho dos contêineres */
   height: auto;
-  /* Mantém a proporção das imagens */
+  object-fit: cover;
 }
-
-
 
 /* beaches-set */
 .beaches-set {
@@ -755,7 +732,8 @@ button:hover {
 
 /* Modal */
 .modal {
-  display: none; /* Inicialmente oculto */
+  display: none;
+  /* Inicialmente oculto */
   position: fixed;
   z-index: 1;
   left: 0;
@@ -765,13 +743,14 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  display: flex; /* Garante que o conteúdo do modal seja centralizado */
+  display: flex;
+  /* Garante que o conteúdo do modal seja centralizado */
 }
 
 /* Conteúdo do Modal (layout com grid) */
 .modal-content {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
   background-color: white;
   padding: 20px;
   border-radius: 10px;

@@ -555,56 +555,87 @@ header nav ul li a:hover {
     background-color: #1769aa;
   }
   
-  /* Modal */
   .modal {
-    display: none; /* Inicialmente escondido */
+    display: none; /* Inicialmente oculto */
     position: fixed;
-    top: 0;
+    z-index: 1;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    display: flex; /* Garante que o conteúdo do modal seja centralizado */
   }
   
-  .modal-content {
-    background-color: #fff;
-    display: flex;
-    padding: 6rem;
-    border-radius: 8px;
-    max-width: 1000px;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .modal .modal-image {
-    flex: 1;
-    max-width: 550px;
-    margin-right: 30px;
-    max-height: 600px;
-  }
-  
-  .modal .modal-text {
-    flex: 2;
-    font-size: 1rem;
-    text-align: start;
-  }
-  
-  .modal .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    color: #000;
-    cursor: pointer;
-  }
-  
-  .modal .close:hover {
-    color: #f44336;
-  }
+  /* Modal */
+.modal {
+  display: none; /* Modal começa escondido */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  justify-content: center;
+  align-items: center;
+  display: flex; /* Centraliza o conteúdo do modal */
+  flex-direction: column; /* Se necessário, para organização vertical */
+}
+
+/* Conteúdo do Modal (layout com grid) */
+.modal-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 130vh; /* Tamanho máximo da largura */
+  text-align: left;
+  max-height: 80vh; /* Limite de altura para não sair da tela */
+  overflow: auto; /* Permite rolar caso o conteúdo ultrapasse o limite de altura */
+}
+
+/* Estilo da imagem dentro do modal */
+.modal-image {
+  width: 60vh;
+  height: 60vh;
+  object-fit: cover; /* Mantém a proporção da imagem */
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* Estilo do botão "Ir para a página" */
+.go-to-page {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.go-to-page:hover {
+  background-color: #45a049;
+}
+
+/* Estilo do botão de fechar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
   
   
   /* Footer */

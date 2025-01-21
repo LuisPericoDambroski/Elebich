@@ -1,0 +1,539 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+}
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+ 
+header .logo img {
+    max-height: 50px;
+}
+ 
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+ 
+header nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #2196F3;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+ 
+header nav ul li a:hover {
+    background-color: #1769aa;
+}
+ 
+header .user-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+ 
+header .user-icons img {
+    max-height: 30px;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.navigation a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #FFD700;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.user-options input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    outline: none;
+}
+
+.user-icon {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Destaque */
+/* Estilo base para o destaque */
+.highlight {
+    background: linear-gradient(135deg, #7c6c6c, #dbcfcf); /* Fundo em gradiente */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.highlight h1 {
+    font-size: 2.5rem; /* Tamanho da fonte grande */
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.highlight p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.highlight button {
+    background-color: #006eff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Notícias em Destaque */
+.featured-news {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+
+}
+
+.featured-news h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.news-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
+
+.card2 {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+
+.news-card {
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: calc(33.333% - 20px); /* 3 colunas */
+    text-align: center;
+}
+
+.news-card img {
+    width: 114px;
+    height: 109px;
+    border-radius: 10px;
+}
+
+/* Contêiner do grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 20px; /* Espaço entre os itens */
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Posts Recentes */
+.recent-posts {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.posts img {
+    border-radius: 20px;
+    width: 200px;
+    height: 219px;
+}
+
+.grid-tags {
+    display: grid;
+    grid-template-areas: 
+    "b b a"
+    "b b c"
+    "b b c";
+}
+
+.descript span {
+    background-color: #53a4e6;
+    border-radius: 15px;
+    padding: 5px;
+    color: #ffffff;
+}
+
+.recent-posts h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.posts article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Aprenda por Assunto */
+.learn {
+    background-color: white;
+    padding: 20px;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.learn h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.learn ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.learn ul li {
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.learn form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.learn input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.learn button {
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.learn button:hover {
+    background-color: #1976D2;
+}
+
+/* Postagens de Usuários */
+.user-posts {
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+}
+
+.user-posts h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user-feed {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user-feed .post {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+/* Layout principal responsivo */
+.responsive-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Grid container para seções */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas iguais */
+    gap: 20px;
+}
+
+/* Formulario */
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.form-group select {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+
+/* Estilos para os elementos internos */
+.featured-news, .recent-posts, .learn {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-insta {
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    display: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-insta {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+.post-insta {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+}
+.post-header, .post-footer {
+    padding: 10px 15px;
+}
+.post-header {
+    display: flex;
+    align-items: center;
+}
+.post-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.post-header .user-info {
+    font-size: 14px;
+}
+.post-header .user-info .username {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+.post-image {
+    background-color: #eaeaea;
+    width: 100%;
+    height: 300px;
+}
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-footer .actions {
+    display: flex;
+    gap: 10px;
+}
+.post-footer .actions i {
+    font-size: 20px;
+    cursor: pointer;
+}
+.post-footer .description {
+    font-size: 14px;
+    color: #777;
+}
+.icons-section {
+    text-align: center;
+    margin-top: 30px;
+}
+.icons-section div {
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+    color: #008080;
+    font-size: 14px;
+}
+.icons-section div i {
+    font-size: 40px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 1440px) {
+    .highlight {
+        padding: 40px 15px;
+    }
+
+    .highlight h1 {
+        font-size: 2rem;
+    }
+
+    .highlight p {
+        font-size: 1rem;
+    }
+
+    .highlight button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .highlight {
+        padding: 30px 10px;
+    }
+
+    .highlight h1 {
+        font-size: 1.8rem;
+    }
+
+    .highlight p {
+        font-size: 0.9rem;
+    }
+
+    .highlight button {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .highlight {
+        padding: 20px 5px;
+    }
+
+    .highlight h1 {
+        font-size: 1.5rem;
+    }
+
+    .highlight p {
+        font-size: 0.8rem;
+    }
+
+    .highlight button {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+    .news-card {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid-container, .news-card {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .news-card {
+        max-width: 100%; /* Cada coluna ocupa 100% da largura */
+    }
+}
+@media (max-width: 768px) {
+    .responsive-main {
+        padding: 10px;
+        gap: 10px;
+    }
+    .news-carousel {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    .recent-posts, .learn {
+        padding: 15px;
+    }
+}

@@ -234,7 +234,7 @@ header nav ul li a:hover {
   background-color: #1769aa;
 }
 
-/* Ajuste adicional para manter proporções */
+/*  manter proporções Search */
 .search-container img {
   z-index: 11;
 }

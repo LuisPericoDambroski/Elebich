@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="CSS/Blog.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
             <a href="index.html">
@@ -28,7 +29,7 @@
                 <img src="/IMAGENS/search-icon.png" alt="Search" id="search-icon">
                 <input type="text" class="search-bar" placeholder="Search in site">
             </div>
-    
+
             <!-- Ícone do Usuário (aparece após o login) -->
             <div class="user-icon" id="user-icon" style="display: none;" onclick="toggleUserMenu()">
                 <img src="/IMAGENS/user-icon.png" alt="User Icon" />
@@ -37,34 +38,38 @@
             <div class="user-login" id="user-login">
                 <button class="login-button" id="login-button" onclick="toggleLoginForm()">Login</button>
             </div>
-    
+
             <!-- Formulário de Login -->
             <div class="login-form-container" id="login-form" style="display: none;">
                 <form autocomplete="off">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required
                         autocomplete="email" />
-    
+
                     <label for="password">Senha</label>
                     <input type="password" id="password" name="password" placeholder="Digite sua senha" required
                         autocomplete="current-password" />
-    
+
                     <button type="button" onclick="loginUser()">Entrar</button>
                 </form>
             </div>
-    
-    
+
+
             <!-- Menu de usuário (inicialmente escondido) -->
             <div class="user-menu" id="user-menu" style="display: none;">
                 <ul>
-                    <li><a href="/Login.html">Gerenciar Conta</a></li>
-                    <li><a href="/Login.html">Reviews</a></li>
-                    <li><a href="/Login.html">Notificações</a></li>
+                    <li><a href="/login.html">Gerenciar Conta</a></li>
+                    <li><a href="/login.html">Reviews</a></li>
+                    <li><a href="/login.html">Notificações</a></li>
                 </ul>
             </div>
         </div>
-        </header>
-      <!-- Header fim -->
+
+        <script src="/JS/search.js"></script>
+        <script src="/JS/menu.js"></script>
+        <script src="/JS/login.js"></script>
+    </header>
+    <!-- Header fim -->
 
     <!-- Destaque -->
     <section class="highlight">

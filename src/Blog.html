@@ -8,24 +8,63 @@
     <link rel="stylesheet" href="CSS/Blog.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="logo">
-            <img src="/IMAGENS/logo.png" alt="Elibeach Logo">
+            <a href="index.html">
+                <img src="/IMAGENS/logo.png" alt="Elibeach Logo">
+            </a>
         </div>
         <nav>
             <ul>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Praias</a></li>
+                <li><a href="/Sobre.html">Sobre</a></li>
+                <li><a href="/Praias.html">Praias</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#Contato">Contato</a></li>
             </ul>
         </nav>
         <div class="user-icons">
-            <img src="/IMAGENS/search-icon.png" alt="Search">
-            <img src="/IMAGENS/user-icon.png" alt="User">
+            <!-- Botão de pesquisa -->
+            <div class="search-container">
+                <img src="/IMAGENS/search-icon.png" alt="Search" id="search-icon">
+                <input type="text" class="search-bar" placeholder="Search in site">
+            </div>
+    
+            <!-- Ícone do Usuário (aparece após o login) -->
+            <div class="user-icon" id="user-icon" style="display: none;" onclick="toggleUserMenu()">
+                <img src="/IMAGENS/user-icon.png" alt="User Icon" />
+            </div>
+            <!-- Botão de Login (aparece até o login ser realizado) -->
+            <div class="user-login" id="user-login">
+                <button class="login-button" id="login-button" onclick="toggleLoginForm()">Login</button>
+            </div>
+    
+            <!-- Formulário de Login -->
+            <div class="login-form-container" id="login-form" style="display: none;">
+                <form autocomplete="off">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required
+                        autocomplete="email" />
+    
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required
+                        autocomplete="current-password" />
+    
+                    <button type="button" onclick="loginUser()">Entrar</button>
+                </form>
+            </div>
+    
+    
+            <!-- Menu de usuário (inicialmente escondido) -->
+            <div class="user-menu" id="user-menu" style="display: none;">
+                <ul>
+                    <li><a href="/Login.html">Gerenciar Conta</a></li>
+                    <li><a href="/Login.html">Reviews</a></li>
+                    <li><a href="/Login.html">Notificações</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+        </header>
+      <!-- Header fim -->
 
     <!-- Destaque -->
     <section class="highlight">
@@ -222,5 +261,34 @@
             </div>
         </section>
     </div>
+      <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div id="Contato">
+        <h4>Contato</h4>
+        <p>WhatsApp: (99) 99999-9999</p>
+        <p>Email: contato@exemplo.com</p>
+        <p>Telefone: (11) 3333-3333</p>
+      </div>
+      <div id="Sobre">
+        <h4>Sobre</h4>
+        <p><a href="/Sobre.html">Quem Somos</a></p>
+        <p><a href="/politicapriv.html">Política de Privacidade</a></p>
+        <p><a href="/termos.html">Termos de Serviço</a></p>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <p><a href="#">Home</a></p>
+        <p><a href="#">Praias</a></p>
+        <p><a href="#">Blog</a></p>
+      </div>
+      <div class="social">
+        <h4>Redes Sociais</h4>
+        <img src="/IMAGENS/facebook.png" alt="Facebook">
+        <img src="/IMAGENS/insta.png" alt="Instagram">
+      </div>
+    </div>
+  </footer>
+  <!-- Footer fim -->
     </body>
 </html>

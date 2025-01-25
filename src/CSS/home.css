@@ -247,12 +247,14 @@ header nav ul li a:hover {
     position: relative;
     margin: auto;
     overflow: hidden;
+    
   }
   
   .mySlides img {
     width: 100%;
     height: 50vh;
     object-fit: cover;
+    transition: background-color 2s ease;
   }
   .anuncio {
     width: 100%;
@@ -325,11 +327,13 @@ header nav ul li a:hover {
   .mySlides {
     display: none;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 3ms ease-in-out;
+    transition: background-color 2s ease;
   }
   
   .mySlides.fade {
-    opacity: 1;
+    opacity: 4;
+    transition: background-color 2s ease;
   }
   
   /* Categories */
@@ -339,6 +343,14 @@ header nav ul li a:hover {
     gap: 2rem;
     margin: 2.5rem auto;
     max-width: 75%;
+  }
+  .categories :hover{
+    transform: translateY(-3px);
+    transform: skew(3px);
+  /* Deslocamento inicial */
+  animation: fadeIn 2s forwards, backwards ;
+  /* Aparecendo com animação */
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
   }
   
   .category {
@@ -396,6 +408,23 @@ header nav ul li a:hover {
     gap: 2rem;
     margin: 2.5rem auto;
     max-width: 85%;
+    
+  }
+  .highlights :hover{
+    transform: translateY(-3px);
+    transform: skew(3px);
+  /* Deslocamento inicial */
+  animation: fadeIn 2s forwards, backwards ;
+  /* Aparecendo com animação */
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  }
+  .highlight:hover{
+    transform: translateY(-10px);
+    transform: skew(3px);
+  /* Deslocamento inicial */
+  animation: fadeIn 2s forwards, backwards ;
+  /* Aparecendo com animação */
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
   }
   
   .highlight {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elibeach</title>
-    <link rel="stylesheet" href="/CSS/login.css">
+    <link rel="stylesheet" href="/CSS/loginteste.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="/Sobre.html">Sobre</a></li>
                 <li><a href="/Praias.html">Praias</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="/Blog.html">Blog</a></li>
                 <li><a href="#Contato">Contato</a></li>
             </ul>
         </nav>
@@ -59,10 +59,8 @@
             <!-- Menu de usuário (inicialmente escondido) -->
             <div class="user-menu" id="user-menu" style="display: none;">
                 <ul>
-                    <li><a href="/Login.html">Gerenciar Conta</a></li>
-                    <li><a href="/Login.html">Reviews</a></li>
-                    <li><a href="/Login.html">Notificações</a></li>
-                    <li><a href="#" onclick="logoutUser()">Sair</a></li>
+                    <li><a href="/login.html">Reviews</a></li>
+                    <li><a href="/login.html">Notificações</a></li>
                 </ul>
             </div>
         </div>
@@ -71,61 +69,112 @@
         <script src="/JS/menu.js"></script>
         <script src="/JS/login.js"></script>
     </header>
+
     <!-- Main Content -->
     <main>
         <!-- Área do Usuário -->
         <section class="usuario">
             <div class="usuario-info">
-                <img src="/IMAGENS/avatar.png" alt="Ícone do Usuário" class="usuario-icon">
+                <img src="IMAGENS/avatar.png" alt="Ícone do Usuário" class="usuario-icon">
                 <div>
                     <h1>Perfil do Usuário</h1>
-                    <p>Sign up for our newsletter to receive updates and exclusive offers.</p>
+                    <p>Inscreva-se na nossa newsletter para receber atualizações e ofertas exclusivas..</p>
                 </div>
             </div>
-            <a href="/index.html" class="btn-sair">Sair</a>
+            <button class="btn-sair"onclick="logoutUser()">Sair</button>
         </section>
-        <hr>
+
         <!-- Última Review -->
         <section class="ultima-review">
-            <div>
+            <div class="left-section">
                 <h2>Última Review</h2>
-                <p>Get the latest news and updates delivered straight to your inbox.</p>
+                <p>Veja o que nossos usuários estão dizendo</p>
+                <button class="review-button">Escrever uma Review</button>
+                <div class="review-container">
+                    <div class="review-box">
+                        <div class="review-header">
+                            <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                            <div class="user-name">User 1</div>
+                            <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                        </div>
+                        <div class="review-text">Excelente praia! Super recomendo.</div>
+                    </div>
+                    <div class="review-box">
+                        <div class="review-header">
+                            <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                            <div class="user-name">User 2</div>
+                            <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                        </div>
+                        <div class="review-text">Amei a experiência, com certeza vou ir novamente!</div>
+                    </div>
+
+                </div>
             </div>
-            <div class="review-box">
-                <img src="/IMAGENS/Rectangle 6763.png" alt="Última Review">
+            <div class="right-section">
+                <img src="IMAGENS/highlight9.png" alt="Descrição da imagem" class="large-box-image">
             </div>
+
         </section>
         <!-- comentarios -->
-        <hr>
+
         <section class="comentarios">
+            <div class="opacidade"></div>
             <div class="coments">
-                <h2>Comments</h2>
+                <h2>Comentários</h2>
                 <div class="comentarios-container">
                     <div class="comentarios-list">
-                        <div class="comentario"></div>
-                        <div class="comentario"></div>
+                        <!-- Box de Comentário 1 -->
+                        <div class="comentario">
+                            <div class="review-header">
+                                <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                                <div class="user-name">Comentário 1</div>
+                                <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            </div>
+                            <div class="review-text">Ótima experiência, recomendo para todos!</div>
+                        </div>
+
+                        <!-- Box de Comentário 2 -->
+                        <div class="comentario">
+                            <div class="review-header">
+                                <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                                <div class="user-name">Comentário 2</div>
+                                <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            </div>
+                            <div class="review-text">Amei, tudo de excelente qualidade!</div>
+                        </div>
+
+                        <!-- Box de Comentário 3 -->
+                        <div class="comentario">
+                            <div class="review-header">
+                                <div class="user-icon"> <img src="IMAGENS/neymar.png" alt=""></div>
+                                <div class="user-name">Comentário 3</div>
+                                <div class="stars"><img src="IMAGENS/5 estrelas.png" alt="5 estrelas"></div>
+                            </div>
+                            <div class="review-text">Boa qualidade, mas achei o preço um pouco elevado.</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Área dos Ícones (mantendo como está) -->
             <div class="icones">
                 <div class="icone">
                     <div class="icone-img-bg">
-                        <img src="/IMAGENS/e-mail.png" alt="Ícone 1">
+                        <img src="IMAGENS/e-mail.png" alt="Ícone 1">
                     </div>
                     <h3>Exclusive Offers</h3>
                     <p>Access to special promotions.</p>
                 </div>
                 <div class="icone">
                     <div class="icone-img-bg">
-                        <img src="/IMAGENS/noticia.png" alt="Ícone 2">
+                        <img src="IMAGENS/noticia.png" alt="Ícone 2">
                     </div>
                     <h3>Stay Informed</h3>
                     <p>Stay up-to-date on our latest news.</p>
                 </div>
                 <div class="icone">
                     <div class="icone-img-bg">
-                        <img src="/IMAGENS/anuncio.png" alt="Ícone 3">
+                        <img src="IMAGENS/anuncio.png" alt="Ícone 3">
                     </div>
                     <h3>Announce</h3>
                     <p>Be the first to know about new arrivals.</p>
@@ -133,12 +182,11 @@
             </div>
         </section>
 
-        <hr>
         <section class="fazer-review">
             <div class="Reviewai">
                 <button class="Review">Review</button>
             </div>
-            <textarea name="review" id="minha-review" placeholder="Escreva sua review aqui..."></textarea>
+            <textarea name="review" id="minha-review" placeholder="Escreva sua review aqui..." class="textarea"></textarea>
             <div class="btn-container">
                 <button class="btn-enviar">Enviar</button>
             </div>
@@ -148,8 +196,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2022 All rights reserved</p>
         <nav>
+            <p>© 2022 All rights reserved</p>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms & Conditions</a>
         </nav>

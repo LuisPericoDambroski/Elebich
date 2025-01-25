@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="/Sobre.html">Sobre</a></li>
                 <li><a href="/Praias.html">Praias</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="/Blog.html">Blog</a></li>
                 <li><a href="#Contato">Contato</a></li>
             </ul>
         </nav>
@@ -59,10 +59,9 @@
             <!-- Menu de usuário (inicialmente escondido) -->
             <div class="user-menu" id="user-menu" style="display: none;">
                 <ul>
-                    <li><a href="/Login.html">Gerenciar Conta</a></li>
-                    <li><a href="/Login.html">Reviews</a></li>
-                    <li><a href="/Login.html">Notificações</a></li>
-                    <li><a href="#" onclick="logoutUser()">Sair</a></li>
+                    <li><a href="/login.html">Gerenciar Conta</a></li>
+                    <li><a href="/login.html">Reviews</a></li>
+                    <li><a href="/login.html">Notificações</a></li>
                 </ul>
             </div>
         </div>
@@ -87,10 +86,10 @@
                 <img src="/IMAGENS/banner.png" style="width:100%">
             </div>
             <div class="mySlides fade">
-                <img src="/IMAGENS/banner1.png" style="width:100%">
+                <img src="/IMAGENS/Anuncio3.png" style="width:100%">
             </div>
             <div class="mySlides fade">
-                <img src="/IMAGENS/highlight8.webp" style="width:100%">
+                <img src="/IMAGENS/banner4.png" style="width:100%">
             </div>
             <div class="mySlides fade">
                 <img src="/IMAGENS/highlight10.webp" style="width:100%">
@@ -147,43 +146,60 @@
             </div>
         </section>
         <!-- Categorias fim-->
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="modal-image" class="modal-image" alt="Imagem da Praia">
+                <div id="modal-text" class="modal-text"></div>
+                <button class="go-to-page" onclick="">Ir até a pagina</button>
+            </div>
+        </div>
         <!-- Destaques -->
+         <!-- banner2 -->
+        <div class="anuncio">
+            <div class="anuncio">
+                <img src="/IMAGENS/melhores-praias.png" style="width:100%">
+            </div>
+        </div>
+
         <h1 class="destaque"> Destaques</h1>
         <section class="highlights">
             <div class="highlight">
                 <h3>Baía do Sancho</h3>
-                <img src="/IMAGENS/highlight1.jpeg" alt="Baía do Sancho">
-                <button data-id="1" onclick="openModal(this)">Saiba mais</button>
+                <img src="/IMAGENS/highlight1.png" alt="Baía do Sancho">
+                <button class="saiba-mais" data-id="1">Saiba Mais</button>
+
             </div>
 
             <div class="highlight">
                 <h3>Praia do Espelho</h3>
                 <img src="/IMAGENS/highlight2.jpeg" alt="Praia do Espelho">
-                <button data-id="2" onclick="openModal(this)">Saiba mais</button>
+                <button class="saiba-mais" data-id="2">Saiba Mais</button>
             </div>
 
             <div class="highlight">
                 <h3>Praia dos Carneiros</h3>
                 <img src="/IMAGENS/highlight3.jpeg" alt="Praia dos Carneiros">
-                <button data-id="3" onclick="openModal(this)">Saiba mais</button>
+                <button class="saiba-mais" data-id="3">Saiba Mais</button>
             </div>
 
             <div class="highlight">
                 <h3>Praia de Jericoacoara</h3>
                 <img src="/IMAGENS/highlight4.jpg" alt="Praia de Jericoacoara">
-                <button data-id="4" onclick="openModal(this)">Saiba mais</button>
+                <button class="saiba-mais" data-id="4">Saiba Mais</button>
             </div>
 
             <div class="highlight">
                 <h3>Praia de Garapuá</h3>
                 <img src="/IMAGENS/highlight5.jpg" alt="Praia de Garapuá">
-                <button data-id="5" onclick="openModal(this)">Saiba mais</button>
+                <button class="saiba-mais" data-id="5">Saiba Mais</button>
             </div>
 
             <div class="highlight">
                 <h3>Praia da Ilha do Campeche</h3>
                 <img src="/IMAGENS/highlight6.jpg" alt="Praia da Ilha do Campeche">
-                <button data-id="6" onclick="openModal(this)">Saiba mais</button>
+                <button class="saiba-mais" data-id="6">Saiba Mais</button>
             </div>
             <script src="/JS/modal.js"></script>
         </section>

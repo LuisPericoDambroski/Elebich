@@ -1,11 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portal de Notícias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Blog.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="/IMAGENS/logo.png" alt="Elibeach Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/Sobre.html">Sobre</a></li>
+                <li><a href="/Praias.html">Praias</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#Contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="user-icons">
+            <!-- Botão de pesquisa -->
+            <div class="search-container">
+                <img src="/IMAGENS/search-icon.png" alt="Search" id="search-icon">
+                <input type="text" class="search-bar" placeholder="Search in site">
+            </div>
+
+            <!-- Ícone do Usuário (aparece após o login) -->
+            <div class="user-icon" id="user-icon" style="display: none;" onclick="toggleUserMenu()">
+                <img src="/IMAGENS/user-icon.png" alt="User Icon" />
+            </div>
+            <!-- Botão de Login (aparece até o login ser realizado) -->
+            <div class="user-login" id="user-login">
+                <button class="login-button" id="login-button" onclick="toggleLoginForm()">Login</button>
+            </div>
+
+            <!-- Formulário de Login -->
+            <div class="login-form-container" id="login-form" style="display: none;">
+                <form autocomplete="off">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required
+                        autocomplete="email" />
+
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required
+                        autocomplete="current-password" />
+
+                    <button type="button" onclick="loginUser()">Entrar</button>
+                </form>
+            </div>
+
+
+            <!-- Menu de usuário (inicialmente escondido) -->
+            <div class="user-menu" id="user-menu" style="display: none;">
+                <ul>
+                    <li><a href="/login.html">Gerenciar Conta</a></li>
+                    <li><a href="/login.html">Reviews</a></li>
+                    <li><a href="/login.html">Notificações</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="/JS/search.js"></script>
+        <script src="/JS/menu.js"></script>
+        <script src="/JS/login.js"></script>
+    </header>
+
+    <!-- Header fim -->
+
+
+    <!-- Destaque -->
+    <section class="highlight">
+        <h1>MELHORES NOTÍCIAS É AQUI!</h1>
+        <p>Descubra tudo que acontece no mundo com as melhores notícias.</p>
+        <button>Explore agora</button>
+    </section>
+
+    <main class="responsive-main">
+        <!-- Notícias em Destaque -->
+        <section class="featured-news">
+            <h2>Notícias em destaque</h2>
+            <div class="news-carousel">
+                <div class="news-card">
+                        <div class="card2">
+                            <img src="/IMAGENS/Praia.jpg" alt="Notícia 1">
+                            <p>Inauguração de um centro chama atenção de moradores.</p>
+                        </div>
+                    <span>12 nov 2024 | 5 min de leitura</span>
+                </div>
+                <div class="news-card">
+                        <div class="card2">
+                            <img src="/IMAGENS/news1.jpg" alt="Notícia 2">
+                            <p>Nova praia lotada no último fim de semana.</p>
+                        </div>    
+                    <span>12 nov 2024 | 5 min de leitura</span>
+                </div>
+                <div class="news-card">
+                        <div class="card2">
+                            <img src="/IMAGENS/Praia1.jpg" alt="Notícia 3">
+                            <p>Atração local ganha destaque na cidade.</p>
+                        </div>
+                    <span>12 nov 2024 | 5 min de leitura</span>
+                </div>
+            </div>
+        </section>
     
-</body>
+        <!-- Grid para Post Recentes e Aprenda por Assunto -->
+        <div class="grid-container">
+            <section class="recent-posts">
+                <h2>Post recentes</h2>
+                <a href="#" class="view-all">Ver todos →</a>
+                <div class="posts">
+                    <article>
+                        <div class="grid-tags">
+                            <div class="tags">
+                                <img src="/IMAGENS/praia3.jpg">
+                            </div>                            
+                            <div class="descript">
+                                <span>Novidade</span>
+                                <span>Viagem</span>
+                                <h3>Título do Post</h3>
+                                <p>Descrição...</p>
+                            </div>
+                            <span>2 nov 2024 | 5 min de leitura</span>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="grid-tags">
+                                <div class="tags">
+                                    <img src="/IMAGENS/praia4.jpg">
+                                </div>
+                                <div class="descript">
+                                    <span>Novidade</span>
+                                    <span>Viagem</span>
+                                    <h3>Título do Post</h3>
+                                    <p>Descrição...</p>
+                                </div>
+                                <span>12 nov 2024 | 5 min de leitura</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+    
+            <section class="learn">
+                <h2>Aprenda por assunto</h2>
+                <div class="descript">
+                    <span>Novidades</span>
+                    <span>Inaugurações</span>
+                    <span>Cuidados</span><br><br>
+                    <span>Momentos especiais</span>
+                    <span>Dicas</span>
+                    <span>Tragédias</span>
+                    <a href="#">Ver mais tópicos...</a>
+                    <br>
+                    <div class="form-container">
+                        <h2>Cadastre-se para receber novidades</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="nome">Nome</label><br>
+                                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="celular">DDD + Celular</label><br>
+                                <input type="tel" id="celular" name="celular" placeholder="(99) 99999-9999" pattern="\(\d{2}\) \d{5}-\d{4}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label><br>
+                                <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="interesse">Qual seu interesse?</label><br>
+                                <select id="interesse" name="interesse" required>
+                                    <option value="praias">Praias</option>
+                                    <option value="montanhas">Montanhas</option>
+                                    <option value="cidades">Cidades</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" disabled id="cadastrar-btn">Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <section class="grid-insta">
+            <div class="container-insta">
+                <h1 style="text-align: center;">Postagem de Usuários</h1>
+                
+                <!-- Post 1 -->
+                <div class="post-insta">
+                    <div class="post-header">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                        <div class="user-info">
+                            <div class="username">Usuário</div>
+                            <div class="time">2 horas atrás</div>
+                        </div>
+                    </div>
+                    <div class="post-image"></div>
+                    <div class="post-footer">
+                        <div class="description">Exemplo: lorem ipsum dolor...</div>
+                        <div class="actions">
+                            <i>❤️</i>
+                            <i>💬</i>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Post 2 -->
+                <div class="post-insta">
+                    <div class="post-header">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                        <div class="user-info">
+                            <div class="username">Usuário</div>
+                            <div class="time">5 horas atrás</div>
+                        </div>
+                    </div>
+                    <div class="post-image"></div>
+                    <div class="post-footer">
+                        <div class="description">Exemplo: lorem ipsum dolor...</div>
+                        <div class="actions">
+                            <i>❤️</i>
+                            <i>💬</i>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Post 3 -->
+                <div class="post-insta">
+                    <div class="post-header">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                        <div class="user-info">
+                            <div class="username">Usuário</div>
+                            <div class="time">10 horas atrás</div>
+                        </div>
+                    </div>
+                    <div class="post-image"></div>
+                    <div class="post-footer">
+                        <div class="description">Exemplo: lorem ipsum dolor...</div>
+                        <div class="actions">
+                            <i>❤️</i>
+                            <i>💬</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Footer Icons -->
+            <div class="icons-section">
+                <div>
+                    <i>🛡️</i>
+                    Wear sunscreen
+                </div>
+                <div>
+                    <i>🚩</i>
+                    Stay near lifeguards
+                </div>
+                <div>
+                    <i>🗑️</i>
+                    Dispose of trash properly
+                </div>
+            </div>
+        </section>
+    </div>
+
+      <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div id="Contato">
+        <h4>Contato</h4>
+        <p>WhatsApp: (99) 99999-9999</p>
+        <p>Email: contato@exemplo.com</p>
+        <p>Telefone: (11) 3333-3333</p>
+      </div>
+      <div id="Sobre">
+        <h4>Sobre</h4>
+        <p><a href="/Sobre.html">Quem Somos</a></p>
+        <p><a href="/politicapriv.html">Política de Privacidade</a></p>
+        <p><a href="/termos.html">Termos de Serviço</a></p>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <p><a href="#">Home</a></p>
+        <p><a href="#">Praias</a></p>
+        <p><a href="#">Blog</a></p>
+      </div>
+      <div class="social">
+        <h4>Redes Sociais</h4>
+        <img src="/IMAGENS/facebook.png" alt="Facebook">
+        <img src="/IMAGENS/insta.png" alt="Instagram">
+      </div>
+    </div>
+  </footer>
+  <!-- Footer fim -->
+
+    </body>
 </html>

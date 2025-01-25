@@ -1,3 +1,5 @@
+@import url(/CSS/header.css);
+@import url(/CSS/footer.css);
 /* Corpo da página */
 body {
   margin: 0;
@@ -6,251 +8,36 @@ body {
   color: #333;
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #FFFFFF;
-  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
-  position: relative;
-  flex-wrap: wrap;
-}
-
-/* Logo */
-header .logo img {
-  max-height: 3.125rem;
-  /* 50px */
-  width: auto;
-  /* Mantém proporções */
-}
-
-/* Navigation */
-header nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-header nav ul li a {
-  text-decoration: none;
-  padding: 0.625rem 1.25rem;
-  color: #FFFFFF;
-  background-color: #2196F3;
-  border-radius: 1.25rem;
-  transition: background-color 0.3s;
-  font-size: 1rem;
-}
-
-header nav ul li a:hover {
-  background-color: #1769aa;
-}
-
-/* User Icons */
-.user-icons {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  position: relative;
-}
-
-.user-icons img {
-  height: auto;
-  /* Remove a altura fixa */
-  max-width: 2rem;
-  /* Define uma largura máxima para o ícone */
-  width: auto;
-  /* Mantém a proporção da imagem */
-  cursor: pointer;
-}
-
-/* Search Bar */
-.search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-container img {
-  max-height: 1.875rem;
-  /* 30px */
-  cursor: pointer;
-}
-
-.search-bar {
-  display: none;
-  position: absolute;
-  right: 0;
-  transform: translateX(-100%);
-  width: 0;
-  max-width: 15rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #2196F3;
-  border-radius: 1.25rem;
-  outline: none;
-  font-size: 1rem;
-  color: #ffffff;
-  background-color: #FFFFFF;
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-
-.search-bar.active {
-  display: block;
-  width: 10rem;
-  /* Largura expandida */
-  background-color: #FFFFFF;
-  color: #0f0f0f;
-}
-
-/* Botão de Login */
-.login-button {
-  background-color: #2196F3;
-  /* Azul padrão */
-  color: #FFFFFF;
-  /* Texto branco */
-  border: none;
-  /* Remove bordas */
-  border-radius: 0.625rem;
-  /* Bordas arredondadas */
-  padding: 0.625rem 1.25rem;
-  /* Espaçamento interno */
-  font-size: 1rem;
-  /* Tamanho do texto */
-  cursor: pointer;
-  /* Cursor de clique */
-  transition: background-color 0.3s;
-  /* Animação suave */
-}
-
-/* Hover do Botão de Login */
-.login-button:hover {
-  background-color: #1769aa;
-  /* Azul mais escuro ao passar o mouse */
-}
-
-/* Formulário de Login */
-.login-form-container {
-  position: absolute;
-  top: 4rem;
-  /* Posição relativa ao topo */
-  right: 2rem;
-  /* Posição relativa à direita */
-  width: 20rem;
-  /* Largura fixa */
-  background-color: #FFFFFF;
-  /* Fundo branco */
-  box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
-  /* Sombra leve */
-  border-radius: 0.625rem;
-  /* Bordas arredondadas */
-  padding: 1.5rem;
-  /* Espaçamento interno */
-  display: none;
-  /* Inicialmente oculto */
-  z-index: 10;
-  /* Garante visibilidade acima de outros elementos */
-}
-
-/* Inputs do Formulário */
-.login-form-container input[type="email"],
-.login-form-container input[type="password"] {
-  width: 100%;
-  /* Largura total */
-  padding: 0.625rem;
-  /* Espaçamento interno */
-  margin-bottom: 1rem;
-  /* Espaçamento inferior */
-  border: 1px solid #ccc;
-  /* Borda cinza */
-  border-radius: 0.625rem;
-  /* Bordas arredondadas */
-  font-size: 1rem;
-  /* Tamanho do texto */
-  box-sizing: border-box;
-  /* Inclui padding no cálculo de largura */
-  outline: none;
-  /* Remove o destaque ao focar */
-  transition: border-color 0.3s;
-  /* Animação suave */
-}
-
-/* Efeito ao Focar nos Inputs */
-.login-form-container input:focus {
-  border-color: #2196F3;
-  /* Borda azul ao focar */
-}
-
-/* Rótulos */
-.login-form-container label {
-  font-size: 1rem;
-  /* Tamanho do texto */
-  color: #333;
-  /* Cor do texto */
-  display: block;
-  /* Exibe como bloco */
-  margin-bottom: 0.5rem;
-  /* Espaçamento inferior */
-}
-
-/* Botão de Enviar no Formulário */
-.login-form-container button {
-  background-color: #2196F3;
-  /* Azul padrão */
-  color: #FFFFFF;
-  /* Texto branco */
-  border: none;
-  /* Remove bordas */
-  border-radius: 0.625rem;
-  /* Bordas arredondadas */
-  padding: 0.625rem 1.25rem;
-  /* Espaçamento interno */
-  font-size: 1rem;
-  /* Tamanho do texto */
-  cursor: pointer;
-  /* Cursor de clique */
-  width: 100%;
-  /* Largura total */
-  transition: background-color 0.3s;
-  /* Animação suave */
-}
-
-.login-form-container button:hover {
-  background-color: #1769aa;
-  /* Azul mais escuro ao passar o mouse */
-}
-
 
 /* Banner */
-.banner {
-  text-align: center;
+
+.slideshow-container {
   width: 100%;
-  height: 50vh;
-  /* Ajuste a altura para 50% da altura da viewport */
+  position: relative;
+
   overflow: hidden;
 }
 
-.banner-image {
+.mySlides img {
   width: 100%;
+  height: 30vh;
+  object-fit: cover;
 }
 
-.slideshow-container {
+.anuncio {
   width: 100%;
   position: relative;
   margin: auto;
   overflow: hidden;
 }
 
-.mySlides img {
+.anuncio img {
   width: 100%;
-  height: 50%;
-  object-fit: fill;
+  height: 30vh;
+  object-fit: cover;
 }
 
-
+.prev,
 .next {
   cursor: pointer;
   position: absolute;
@@ -270,7 +57,7 @@ header nav ul li a:hover {
   border-radius: 3px 0 0 3px;
 }
 
-
+.prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -281,7 +68,7 @@ header nav ul li a:hover {
   padding: 0.5rem;
   position: absolute;
   bottom: 2rem;
-  width: 0%;
+  width: 100%;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -304,7 +91,7 @@ header nav ul li a:hover {
   transition: background-color 0.6s ease;
 }
 
-
+.active,
 .dot:hover {
   background-color: #717171;
 }
@@ -312,25 +99,35 @@ header nav ul li a:hover {
 .mySlides {
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1ms ease-in-out;
+  transition: all;
 }
 
 .mySlides.fade {
-  opacity: 1;
+  opacity: 3;
 }
 
 
 .bannermeio {
   width: 100%;
-  position: relative;
-  margin: auto;
-  overflow: hidden;
+  /* Largura de 100% da tela */
+  height: 50vh;
+  /* Altura de aproximadamente 50% da altura da janela */
+  background-image: url('/IMAGENS/Anuncio3.png');
+  /* Defina o caminho da imagem */
+  background-size: cover;
+  /* Faz a imagem cobrir toda a área da div, mantendo a proporção */
+  background-position: center;
+  /* Centraliza a imagem na div */
 }
 
+
 .bannermeio img {
-  width: 100%;
-  height: 50vh;
+  width: fit-content;
+  height: 90vh;
   object-fit: cover;
+  align-self: center;
+
 }
 
 /* Seção de Categorias */
@@ -348,7 +145,6 @@ header nav ul li a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  background: #ffcc00;
 }
 
 .categories .category .image-container {
@@ -357,15 +153,15 @@ header nav ul li a:hover {
 }
 
 .categories .category img {
-  width: 100%;
-  height: auto;
+  width: 100vh;
+  height: 40vh;
   object-fit: cover;
   display: block;
   border-radius: 10px;
 }
 
 .categories .category button {
-  position: absolute;
+
   bottom: 10px;
   right: 10px;
   background-color: #2196F3;
@@ -375,7 +171,7 @@ header nav ul li a:hover {
   font-size: 16px;
   border-radius: 1.25rem;
   cursor: pointer;
-  z-index: 2;
+
   /* Garante que o botão fique por cima */
   transition: background-color 0.3s;
 }
@@ -388,7 +184,7 @@ header nav ul li a:hover {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(7, 7, 7, 0.301);
   color: #FFFFFF;
   padding: 5px 10px;
   border-radius: 5px;
@@ -399,77 +195,44 @@ header nav ul li a:hover {
   transform: scale(1.05);
 }
 
-/* Anuncio */
-.anuncio {
-  width: 100%;
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-}
-
-.anuncio img {
-  width: 100%;
-  height: 30vh;
-  object-fit: cover;
-}
-
 #anuncios {
   display: flex;
-  /* Flexbox para organizar os anúncios em linha */
-  justify-content: flex-start;
-  /* Alinha os itens à esquerda */
   gap: 20px;
-  /* Espaço entre o Anúncio1 e a coluna de anúncios à direita */
   align-items: flex-start;
-  /* Alinha os itens ao topo */
 }
 
 .anuncio1 {
-  flex: 0 0 auto;
-  /* Impede que o Anúncio1 se ajuste ao tamanho da tela */
-  height: 100%;
-  /* Define que o Anúncio1 ocupará toda a altura do contêiner */
-  max-height: 500px;
-  /* Ajuste de altura máxima, caso necessário */
+  flex: 1;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.anuncio1 img {
   width: 100%;
-  /* Garante que a imagem ocupe toda a largura do Anúncio1 */
-  box-sizing: border-box;
-  /* Considera o padding na largura/altura total */
+  height: auto;
+  object-fit: cover;
 }
 
 .anuncios-direita {
   display: flex;
-  /* Organiza os anúncios à direita em coluna */
   flex-direction: column;
-  /* Empilha os anúncios verticalmente */
   gap: 20px;
-  /* Espaçamento entre os anúncios */
-  height: 100%;
-  /* Garante que a altura seja a mesma do Anúncio1 */
-  max-height: 500px;
-  /* Limita a altura total para evitar problemas de overflow */
+  flex: 1;
+  max-width: 500px;
 }
 
 .anuncio2,
 .anuncio3 {
-  flex: 1 1 auto;
-  /* Faz com que os anúncios se ajustem à altura disponível */
-  width: 100%;
-  /* Garante que ocupem a largura disponível */
-  box-sizing: border-box;
-  /* Considera o padding na largura/altura total */
+  flex: 1;
+  overflow: hidden;
 }
 
-.anuncio1 img,
 .anuncio2 img,
 .anuncio3 img {
   width: 100%;
-  /* Garante que as imagens se ajustem ao tamanho dos contêineres */
   height: auto;
-  /* Mantém a proporção das imagens */
+  object-fit: cover;
 }
-
-
 
 /* beaches-set */
 .beaches-set {
@@ -741,21 +504,20 @@ button:hover {
   /*  tamanho da fonte  */
   font-weight: bold;
   /* texto em negrito  */
-  margin-top: 30px;
+  margin-top: 0px;
   /*  margem superior  */
-  padding: 10px;
-  margin-bottom: 30px;
+  padding: 0px;
+  margin-bottom: 0px;
   /*  margem inferior  */
-  background-color: #7171711e;
+  background-color: #0a0a0a1e;
 }
 
-.destaques {
-  background-color: #02627a;
-}
+
 
 /* Modal */
 .modal {
   display: none;
+  /* Inicialmente oculto */
   position: fixed;
   z-index: 1;
   left: 0;
@@ -765,18 +527,18 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  display: flex;
+  /* Garante que o conteúdo do modal seja centralizado */
 }
 
 /* Conteúdo do Modal (layout com grid) */
 .modal-content {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  /* Imagem à esquerda e texto com o botão à direita */
+  grid-template-columns: 1fr 3fr;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   max-width: 130vh;
-  /* Ajuste de largura */
   text-align: left;
 }
 
@@ -785,20 +547,11 @@ button:hover {
   width: 60vh;
   height: 60vh;
   object-fit: cover;
-  /* Mantém a proporção e cobre o espaço da imagem */
   border-radius: 10px;
   margin-right: 20px;
-  /* Espaçamento entre imagem e texto */
 }
 
-/* Estilo do texto */
-.modal-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 0;
-}
+
 
 /* Estilo do botão "Ir para a página" */
 .go-to-page {
@@ -890,31 +643,3 @@ button:hover {
 }
 
 
-/* Footer */
-footer {
-  background-color: #333333;
-  color: #FFFFFF;
-  padding: 1.25rem 2.5rem;
-}
-
-footer .footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-}
-
-footer a {
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer .social img {
-  max-height: 1.875rem;
-  margin-right: 0.625rem;
-  cursor: pointer;
-}
